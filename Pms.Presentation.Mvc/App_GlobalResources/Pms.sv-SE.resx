@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DateFormat" xml:space="preserve">
+    <value>dd/mm/yy</value>
+  </data>
+  <data name="Employee_CareerPathId" xml:space="preserve">
+    <value>Karriär</value>
+  </data>
+  <data name="Employee_CommisionPct" xml:space="preserve">
+    <value>Inlämnade Pct</value>
+  </data>
+  <data name="Employee_Competency" xml:space="preserve">
+    <value>Kompetens</value>
+  </data>
+  <data name="Employee_CompetencyGroup" xml:space="preserve">
+    <value>Kompetens-grupp</value>
+  </data>
+  <data name="Employee_CorporateLocationNumber" xml:space="preserve">
+    <value>Org.nr. plats nr.</value>
+  </data>
+  <data name="Employee_Department" xml:space="preserve">
+    <value>Avdelningen</value>
+  </data>
+  <data name="Employee_Email" xml:space="preserve">
+    <value>Anställd e</value>
+  </data>
+  <data name="Employee_EmployeeStatus" xml:space="preserve">
+    <value>Anställd status</value>
+  </data>
+  <data name="Employee_HireDate" xml:space="preserve">
+    <value>Hired datum</value>
+  </data>
+  <data name="Employee_Manager" xml:space="preserve">
+    <value>Chef</value>
+  </data>
+  <data name="Employee_Number" xml:space="preserve">
+    <value>Anställningsnummer</value>
+  </data>
+  <data name="Employee_OfficeLocationId" xml:space="preserve">
+    <value>Kontor</value>
+  </data>
+  <data name="Employee_ProjectManager" xml:space="preserve">
+    <value>Projektledare</value>
+  </data>
+  <data name="Employee_RecordStatus" xml:space="preserve">
+    <value>Rekord status</value>
+  </data>
+  <data name="Employee_Rohq" xml:space="preserve">
+    <value>Regionkontor huvudkontor</value>
+  </data>
+  <data name="Employee_Salary" xml:space="preserve">
+    <value>lön</value>
+  </data>
+  <data name="Employee_SeatNumber" xml:space="preserve">
+    <value>Platsnummer</value>
+  </data>
+  <data name="Employee_StaffId" xml:space="preserve">
+    <value>Personal Id</value>
+  </data>
+  <data name="Employee_Type" xml:space="preserve">
+    <value>Anställningstyp</value>
+  </data>
+  <data name="General_Back" xml:space="preserve">
+    <value>Tillbaka</value>
+  </data>
+  <data name="General_Create" xml:space="preserve">
+    <value>Skapa</value>
+  </data>
+  <data name="General_Delete" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="General_Detail" xml:space="preserve">
+    <value>Detalj</value>
+  </data>
+  <data name="General_Search" xml:space="preserve">
+    <value>Sök</value>
+  </data>
+  <data name="General_Update" xml:space="preserve">
+    <value>Uppdatera</value>
+  </data>
+  <data name="LoginModel_RememberMe" xml:space="preserve">
+    <value>Kom ihåg mig?</value>
+  </data>
+  <data name="Login_InvalidLogin" xml:space="preserve">
+    <value>Ogiltigt användarnamn och/eller lösenord</value>
+  </data>
+  <data name="Notification_1_Detail" xml:space="preserve">
+    <value>Kontot har skapats</value>
+  </data>
+  <data name="Notification_1_Title" xml:space="preserve">
+    <value>Skapande av konto</value>
+  </data>
+  <data name="Notification_2_Detail" xml:space="preserve">
+    <value>Konto har raderats</value>
+  </data>
+  <data name="Notification_2_Title" xml:space="preserve">
+    <value>Radering av konto</value>
+  </data>
+  <data name="Notification_3_Detail" xml:space="preserve">
+    <value>Uppdatering av konto</value>
+  </data>
+  <data name="Notification_3_Title" xml:space="preserve">
+    <value>Update of account</value>
+  </data>
+  <data name="Person_ActivationTokenField" xml:space="preserve">
+    <value>Aktivering Token Fält</value>
+  </data>
+  <data name="Person_Address" xml:space="preserve">
+    <value>Adress</value>
+  </data>
+  <data name="Person_Age" xml:space="preserve">
+    <value>ålder</value>
+  </data>
+  <data name="Person_Birthday" xml:space="preserve">
+    <value>Födelsedag</value>
+  </data>
+  <data name="Person_BirthdaySpecified" xml:space="preserve">
+    <value>Födelsedag anges</value>
+  </data>
+  <data name="Person_CivilStatus" xml:space="preserve">
+    <value>Civilstånd</value>
+  </data>
+  <data name="Person_Country" xml:space="preserve">
+    <value>Land</value>
+  </data>
+  <data name="Person_CreateBy" xml:space="preserve">
+    <value>Skapad av</value>
+  </data>
+  <data name="Person_CreateDate" xml:space="preserve">
+    <value>Skapad datum</value>
+  </data>
+  <data name="Person_Email" xml:space="preserve">
+    <value>E-post</value>
+  </data>
+  <data name="Person_FirstName" xml:space="preserve">
+    <value>Förnamn</value>
+  </data>
+  <data name="Person_FullName" xml:space="preserve">
+    <value>Fullständigt namn</value>
+  </data>
+  <data name="Person_HomeNumber" xml:space="preserve">
+    <value>Hemnummer</value>
+  </data>
+  <data name="Person_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Person_LastName" xml:space="preserve">
+    <value>Efternamn</value>
+  </data>
+  <data name="Person_MiddleName" xml:space="preserve">
+    <value>Mellannamn</value>
+  </data>
+  <data name="Person_PassportExpiry" xml:space="preserve">
+    <value>Passport utgången</value>
+  </data>
+  <data name="Person_PassportNumber" xml:space="preserve">
+    <value>Passnummer</value>
+  </data>
+  <data name="Person_Password" xml:space="preserve">
+    <value>Lösenord</value>
+  </data>
+  <data name="Person_PersonStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Person_PersonType" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="Person_PrimaryNumber" xml:space="preserve">
+    <value>Primär nummer</value>
+  </data>
+  <data name="Person_Reason" xml:space="preserve">
+    <value>Orsak</value>
+  </data>
+  <data name="Person_SecondaryNumber" xml:space="preserve">
+    <value>Sekundär nummer</value>
+  </data>
+  <data name="Person_Sex" xml:space="preserve">
+    <value>Kön</value>
+  </data>
+  <data name="Person_SocialSecurityNumber" xml:space="preserve">
+    <value>Social sec #</value>
+  </data>
+  <data name="Person_StatusChangeBy" xml:space="preserve">
+    <value>Status ändras genom</value>
+  </data>
+  <data name="Person_StatusChangeReason" xml:space="preserve">
+    <value>Status ändrat anledning</value>
+  </data>
+  <data name="Person_StatusChangeTime" xml:space="preserve">
+    <value>Status ändrat tid</value>
+  </data>
+  <data name="Person_UpdateBy" xml:space="preserve">
+    <value>Uppdaterad av</value>
+  </data>
+  <data name="Person_UpdateDate" xml:space="preserve">
+    <value>Uppdatera datum</value>
+  </data>
+  <data name="Person_UpdateReason" xml:space="preserve">
+    <value>Upate anledning</value>
+  </data>
+  <data name="Person_Username" xml:space="preserve">
+    <value>Användarnamn</value>
+  </data>
+  <data name="Person_YearsItExperience" xml:space="preserve">
+    <value>Års erfarenhet inom IT</value>
+  </data>
+  <data name="Validation_Date" xml:space="preserve">
+    <value>Datum måste vara "mm/dd/yyyy"</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcomen</value>
+  </data>
+</root>

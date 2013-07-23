@@ -1,0 +1,41 @@
+﻿@model Pms.Presentation.Mvc.Models.LoginModel
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })){
+    @Html.AntiForgeryToken()
+    
+    <div class="container login-page">
+        <div class="well login">
+	        <div class="form-horizontal-login">
+	    	    <div class="control-group">
+				    @Html.LabelFor(m => m.UserName, new { @class = "control-label" })
+				    <div class="controls">
+					    @Html.TextBoxFor(m => m.UserName)
+                        
+				    </div>
+			    </div>
+			    <div class="control-group">
+				    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+				    <div class="controls">
+					    @Html.PasswordFor(m => m.Password)
+				    </div>
+			    </div>
+                @Html.ValidationSummary(true)
+			    <div class="control-group">
+				    <div class="controls">	
+					    <span class="pull-left">
+                            <label class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe) @Resources.Pms.LoginModel_RememberMe                       
+                            </label>
+                        </span>
+                        <input class="btn btn-large pull-right" type="submit" value="Log in" />
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+    </div>
+    <div id="bg">
+		<img src="@Url.Content("~/Content/Images/login-bg.jpg")" alt="" />
+	</div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

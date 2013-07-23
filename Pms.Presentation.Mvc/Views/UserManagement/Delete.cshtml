@@ -1,0 +1,54 @@
+﻿@model Pms.Entity.Person
+
+@{
+    ViewBag.Title = "Performance Management System - Detail";
+}
+
+<h2>User account delete</h2>
+@using (Html.BeginForm()) {
+<table class="form" border="0" cellpadding="0" >
+    <tbody>
+        <tr>
+            <th colspan="2" class="header">Main information</th>            
+        </tr>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.Email):</th>
+            <td class="formbody">@Html.DisplayFor(model => model.Email)</td>
+        </tr>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.FirstName):</th>
+            <td class="formbody">@Html.DisplayFor(model => model.FirstName)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.LastName):</th>
+            <td class="formbody">@Html.DisplayFor(model => model.LastName)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.MiddleName):</th>
+            <td class="formbody">@Html.DisplayFor(model => model.MiddleName)</td>
+        </tr>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <th colspan="2" class="header">Reason for deletion</th>            
+        </tr>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td colspan="2" class="formbody">
+                <div class="editor-field">
+                    <textarea id="reason" name="reason" cols="40" rows="4"></textarea>
+                </div>
+            </td>
+        </tr>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+        <tr class="spacer">
+            <td><input type="submit" value="@Resources.Pms.General_Delete" style="width:70px" /></td>
+            <td align="right"><a href="javascript:history.back(1)">@Resources.Pms.General_Back</a></td>
+        </tr>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+    </tbody>
+</table>
+<input type="hidden" id="id" name="id" value="@Model.Id" />
+}

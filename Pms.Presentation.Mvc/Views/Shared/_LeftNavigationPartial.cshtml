@@ -1,0 +1,37 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <!-- Check for First Time Login -->
+    if (!Pms.Presentation.Mvc.Helper.PresentationUtility.IsFirstTime()) {     
+        if (HttpContext.Current.Request.Url.ToString().ToLower().Contains("usermanagement"))
+        {       
+            <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>                                            
+            <li>@Html.ActionLink("Search an Employee", "Search", "UserManagement")</li>            
+        }
+        else if (HttpContext.Current.Request.Url.ToString().ToLower().Contains("skillsmanagement"))
+        {   
+            <li>@Html.ActionLink("Edit Skill", "Edit", "SkillsManagement")</li>                        
+            <li>@Html.ActionLink("View Skill", "Detail", "SkillsManagement")</li>
+            <li>@Html.ActionLink("Create a Skill", "Create", "SkillsManagement")</li>    
+        }
+        else if (HttpContext.Current.Request.Url.ToString().ToLower().Contains("projectmanagement"))
+        {   
+            <li>@Html.ActionLink("Edit Project", "Edit", "ProjectManagement")</li>                        
+            <li>@Html.ActionLink("View Project", "Detail", "ProjectManagement")</li>
+            <li>@Html.ActionLink("Create a Project", "Create", "ProjectManagement")</li>    
+        }
+        else
+        {                                                   
+            <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>                        
+            <li>@Html.ActionLink("About", "About", "Home")</li>    
+        }
+    }
+    else
+    {    
+        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>                        
+        <li>@Html.ActionLink("About", "About", "Home")</li>    
+    }
+}
+else
+{ 
+    <li class="active">@Html.ActionLink("Return to Login", "Login", "Account")</li>    
+}

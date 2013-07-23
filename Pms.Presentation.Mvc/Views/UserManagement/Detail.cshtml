@@ -1,0 +1,110 @@
+﻿@model Pms.Presentation.Mvc.Models.PersonModel
+
+@{
+    ViewBag.Title = "Performance Management System - Detail";
+}
+
+<h4>Employee account detail</h4>
+<hr />
+<h5>Personal Information</h5>
+<div class="well">
+    <div class="row">
+        <div class="span5">
+		    <div class="form-horizontal">
+			    <div class="control-group">
+				    <label class="control-label" for="eMail">@Html.LabelFor(model => model.Email): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.Email)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="firstName">@Html.LabelFor(model => model.FirstName): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.FirstName)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.LastName): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.LastName)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="middleName">@Html.LabelFor(model => model.MiddleName): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.MiddleName)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="birthDay">@Html.LabelFor(model => model.Birthday): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.Birthday)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="age">@Html.LabelFor(model => model.Age): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.Age)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="sex">@Html.LabelFor(model => model.Sex): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.Sex)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="country">@Html.LabelFor(model => model.CountryId): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.CountryObject.Name)
+				    </div>
+			    </div>
+                 <div class="control-group">
+				    <label class="control-label" for="sssNo">@Html.LabelFor(model => model.SocialSecurityNumber): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.SocialSecurityNumber)
+				    </div>
+			    </div>
+             </div>
+          </div>
+    </div>
+</div>
+
+<h5>Other Information</h5>
+<div class="well">
+    <div class="row">
+        <div class="span5">
+		    <div class="form-horizontal">
+			    <div class="control-group">
+				    <label class="control-label" for="civilStatus">@Html.LabelFor(model => model.PersonType): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.PersonType)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="created">@Html.LabelFor(model => model.CreateDate): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.CreateDate)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="updated">@Html.LabelFor(model => model.UpdateDate): </label>
+				    <div class="controls">
+					    @Html.DisplayFor(model => model.UpdateDate)
+				    </div>
+			    </div>
+             </div>
+          </div>
+    </div>
+</div>
+
+<div class="control-group">
+	<div class="controls">    
+        <span>
+        <input type="submit" value="@Resources.Pms.General_Back" class="btn btn-small pull-right" onclick="javascript:history.back(1)"/>
+        </span>
+        <span>
+            <input type="submit" class="btn btn-small pull-right" value="@Resources.Pms.General_Update" onclick="window.location.href='@Url.Action("Edit", "UserManagement",new { id = Model.PersonId })'" />
+        </span>
+	</div>
+</div>

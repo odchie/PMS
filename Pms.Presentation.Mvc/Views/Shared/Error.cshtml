@@ -1,0 +1,19 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<hgroup class="title">
+    <h1 class="error">Error.</h1>
+    <h2 class="error">An error occurred while processing your request.</h2>
+    @if (Model != null)
+    {
+        <h3 class="error">@Html.LabelFor(model => model.ControllerName) : @Html.DisplayFor(model => model.ControllerName) </h3>
+        <h3 class="error">@Html.LabelFor(model => model.ActionName) : @Html.DisplayFor(model => model.ActionName) </h3>
+
+        <h3 class="error">@Html.LabelFor(model => model.Exception) : @Html.DisplayFor(model => model.Exception) </h3>
+    }
+</hgroup>
+
+

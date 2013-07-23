@@ -1,0 +1,299 @@
+﻿@model Pms.Presentation.Mvc.Models.EmployeeModel
+@{
+    ViewBag.Title = "Performance Management System - Edit";
+}
+
+
+<script type="text/javascript">
+    function NextStep() {
+        var $current = $('.step.active'),
+            index = $current.index();
+
+        $('.step.active').hide();
+
+        var currentStep = $('.step.active');
+        currentStep.hide();
+        currentStep.removeClass('active');
+
+        var newStep = currentStep.next('.step');
+        newStep.addClass('active');
+        newStep.show();
+
+        if (index == 2) {
+            $('#wizard-next').hide();
+            $('#wizard-save').show();
+        }
+        else {
+            $('#wizard-prev').show();
+            $('#wizard-save').hide();
+        }
+
+    }
+
+    function PrevStep() {
+        var $current = $('.step.active'),
+            index = $current.index();
+
+        var currentStep = $('.step.active');
+        currentStep.hide();
+        currentStep.removeClass('active');
+
+        var newStep = currentStep.prev('.step');
+        newStep.addClass('active');
+        newStep.show();
+
+        if (index == 1) {
+            $('#wizard-prev').hide();
+            $('#wizard-save').hide();
+        }
+        else {
+            $('#wizard-next').show();
+            $('#wizard-save').hide();
+        }
+    }
+</script>
+
+
+<h4>Edit an Employee account</h4>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<div class="wizard">    
+    <div class="step active">
+        <h5>Personal Information</h5>
+       <div class="row">
+        <div class="span5">
+		    <div class="form-horizontal">
+                <div class="control-group">
+				    <label class="control-label" for="eMail">@Html.LabelFor(model => model.StaffId)</label>
+				    <div class="controls">@Html.Label(Model.StaffId)</div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="firstName">@Html.LabelFor(model => model.PersonModel.FirstName)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.FirstName)
+                        @Html.ValidationMessageFor(model => model.PersonModel.FirstName)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.MiddleName)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.MiddleName)
+                        @Html.ValidationMessageFor(model => model.PersonModel.MiddleName)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.LastName)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.LastName)
+                        @Html.ValidationMessageFor(model => model.PersonModel.LastName)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.Sex)</label>
+				    <div class="controls">
+                        @Html.DropDownListFor(model => model.PersonModel.Sex, new SelectList(Model.PersonModel.ListSex, "Id", "Name", Model.PersonModel.Sex))
+                        @Html.ValidationMessageFor(model => model.PersonModel.Sex)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.CivilStatus)</label>
+				    <div class="controls">
+                        @Html.DropDownListFor(model => model.PersonModel.CivilStatus, new SelectList(Model.PersonModel.ListCivilStatus, "Id", "Name", Model.PersonModel.CivilStatus))
+                        @Html.ValidationMessageFor(model => model.PersonModel.CivilStatus)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.SocialSecurityNumber)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.SocialSecurityNumber)
+                        @Html.ValidationMessageFor(model => model.PersonModel.SocialSecurityNumber)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.Birthday)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.Birthday)
+                        @Html.ValidationMessageFor(model => model.PersonModel.Birthday)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.Address)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.Address)
+                        @Html.ValidationMessageFor(model => model.PersonModel.Address)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.CountryId)</label>
+				    <div class="controls">
+                        @Html.DropDownListFor(model => model.PersonModel.CountryId, new SelectList(Model.PersonModel.ListCountry, "Id", "Name", Model.PersonModel.CountryId))
+                        @Html.ValidationMessageFor(model => model.PersonModel.CountryId)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.PassportNumber)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.PassportNumber)
+                        @Html.ValidationMessageFor(model => model.PersonModel.PassportNumber)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.PassportExpiry)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.PassportExpiry)
+                        @Html.ValidationMessageFor(model => model.PersonModel.PassportExpiry)
+				    </div>
+			    </div>
+                <br />
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.PrimaryNumber)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.PrimaryNumber)
+                        @Html.ValidationMessageFor(model => model.PersonModel.PrimaryNumber)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.SecondaryNumber)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.SecondaryNumber)
+                        @Html.ValidationMessageFor(model => model.PersonModel.SecondaryNumber)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.PersonModel.HomeNumber)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.HomeNumber)
+                        @Html.ValidationMessageFor(model => model.PersonModel.HomeNumber)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.OfficeLocationId)</label>
+				    <div class="controls">
+                        @Html.DropDownListFor(model => model.OfficeLocationId, new SelectList(Model.ListOfficeLocation, "Id", "Name", Model.OfficeLocationId))
+                        @Html.ValidationMessageFor(model => model.OfficeLocationId)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="lastName">@Html.LabelFor(model => model.Number)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.Number)
+                        @Html.ValidationMessageFor(model => model.Number)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="eMail">@Html.LabelFor(model => model.Email)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.Email)
+                        @Html.ValidationMessageFor(model => model.Number)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="eMail">@Html.LabelFor(model => model.PersonModel.ExternalEmail)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.PersonModel.ExternalEmail)
+                        @Html.ValidationMessageFor(model => model.PersonModel.ExternalEmail)
+				    </div>
+			    </div>
+             </div>
+          </div>
+        </div>
+    </div>
+    <div class="step" style="display:none">
+       <h5>Manager Information</h5>
+       <div class="row">
+        <div class="span7">
+		    <div class="form-horizontal">
+                <div class="control-group">
+				    <div class="controls">
+                        @Html.DropDownList("Manager1", new SelectList(Model.ListManagerType, "Id", "Name"))&nbsp;
+                        @Html.DropDownListFor(model => model.ManagerId, new SelectList(Model.ListManager, "EmployeeId", "FullName", Model.ManagerId))
+                        @Html.ValidationMessageFor(model => model.ManagerId)
+				    </div>
+			    </div>
+			    <div class="control-group">
+				    <div class="controls">
+                        @Html.DropDownList("Manager1", new SelectList(Model.ListManagerType, "Id", "Name"))&nbsp;
+                        @Html.DropDownListFor(model => model.ManagerId, new SelectList(Model.ListManager, "EmployeeId", "FullName", Model.ManagerId))
+                        @Html.ValidationMessageFor(model => model.ManagerId)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <div class="controls">
+                        @Html.DropDownList("Manager1", new SelectList(Model.ListManagerType, "Id", "Name"))&nbsp;
+                        @Html.DropDownListFor(model => model.ManagerId, new SelectList(Model.ListManager, "EmployeeId", "FullName", Model.ManagerId))
+                        @Html.ValidationMessageFor(model => model.ManagerId)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <div class="controls">
+                        @Html.DropDownList("Manager1", new SelectList(Model.ListManagerType, "Id", "Name"))&nbsp;
+                        @Html.DropDownListFor(model => model.ManagerId, new SelectList(Model.ListManager, "EmployeeId", "FullName", Model.ManagerId))
+                        @Html.ValidationMessageFor(model => model.ManagerId)
+				    </div>
+			    </div>
+             </div>
+          </div>
+        </div>
+    </div>
+    <div class="step" style="display:none">
+        <h5>Employment Details</h5>
+       <div class="row">
+        <div class="span7">
+		    <div class="form-horizontal">
+			   <div class="control-group">
+				    <label class="control-label" for="eMail">@Html.LabelFor(model => model.HireDate)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.HireDate)
+                        @Html.ValidationMessageFor(model => model.HireDate)
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="eMail">@Html.LabelFor(model => model.YearsItExperience)</label>
+				    <div class="controls">
+					    @Html.EditorFor(model => model.YearsItExperience)
+                        @Html.ValidationMessageFor(model => model.YearsItExperience)
+				    </div>
+			    </div>
+             </div>
+          </div>
+        </div>
+    </div>    
+    <div class="step" style="display:none">
+        <h5>Career Information</h5>
+       <div class="row">
+        <div class="span7">
+		    <div class="form-horizontal">
+			    <div class="control-group">
+				    <label class="control-label" for="civilStatus">Career Level</label>
+				    <div class="controls">
+					    <input type="text" id="staffNo" placeholder="Staff No.">
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="created">Career Counselor</label>
+				    <div class="controls">
+					    <input type="text" id="staffNo" placeholder="Staff No.">
+				    </div>
+			    </div>
+                <div class="control-group">
+				    <label class="control-label" for="updated">Trainings</label>
+				    <div class="controls">
+					    <input type="text" id="staffNo" placeholder="Staff No.">
+				    </div>
+			    </div>
+             </div>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="control-group">
+	<div class="controls">      
+        <input type="button" id="wizard-save" class="btn btn-small pull-right"  style="display: none"value="Save" />             
+        <input type="button" id="wizard-next" class="btn btn-small pull-right"  value="Next" onclick="javascript:NextStep();"/>
+        <input type="button" id="wizard-prev" class="btn btn-small pull-right" style="display: none" value="Previous" onclick="javascript:PrevStep();"/>
+	</div>
+</div>
+}
+

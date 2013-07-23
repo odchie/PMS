@@ -1,0 +1,10 @@
+pkg
+pkgobj
+[Oo]bj
+[Bb]in
+.*\.suo
+*.suo
+Thumbs.db
+Dependency
+packages
+Pms.Presentation.Mvc/App_Data

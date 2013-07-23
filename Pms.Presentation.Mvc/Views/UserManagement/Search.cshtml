@@ -1,0 +1,103 @@
+﻿@model PagedList.IPagedList<Pms.Entity.Interface.IPerson>
+
+@{
+    ViewBag.Title = "Performance Management System - Search";    
+}
+
+<h2>Search a user account</h2>
+
+@using (Html.BeginForm())
+{
+<table class="form" border="0" cellpadding="0">
+    <tbody>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <th colspan="2" class="header">Enter criteria below</th>
+        </tr>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <th>@Resources.Pms.Person_Email:</th>
+            <td class="formbody">@Html.TextBox(@Pms.Common.Variable.PostParameter.Email)</td>
+        </tr>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <th>@Resources.Pms.Person_FirstName:</th>
+            <td class="formbody">@Html.TextBox(@Pms.Common.Variable.PostParameter.Firstname)</td>
+        </tr>
+        <tr>
+            <th>@Resources.Pms.Person_LastName:</th>
+            <td class="formbody">@Html.TextBox(@Pms.Common.Variable.PostParameter.Lastname)</td>
+        </tr>
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+    
+        <tr><td style="border-top: 3px solid #e31937;" colspan="2"></td></tr>
+        <tr>
+            <td colspan="2">
+                <br />
+                <input type="submit" value="@Resources.Pms.General_Search" style="width:70px" class="submit" />
+           </td>
+        </tr>
+    </tbody>
+</table>
+}
+<br /><br />
+@if (Model != null)
+{
+
+<table class="form" border="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <th>@Resources.Pms.Person_FirstName</th>
+            <th>@Resources.Pms.Person_LastName</th>
+            <th>@Resources.Pms.Person_Email</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            var fullName = string.Format("{0}, {1}", item.LastName, item.FirstName);
+       <tr>
+            <td class="formbody">@Html.DisplayFor(modelItem => item.FirstName)</td>
+            <td class="formbody">@Html.DisplayFor(modelItem => item.LastName)</td>
+            <td class="formbody">@Html.DisplayFor(modelItem => item.ExternalEmail)</td>
+            <td class="formbody" align="right">@Html.ActionLink(Resources.Pms.General_Detail, "Detail", new { id = item.PersonId })</td>
+        </tr>
+        }
+        <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+    </tbody>
+</table>
+        
+
+<div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    &nbsp;
+    @if (Model.HasPreviousPage)
+    {
+        @Html.ActionLink("<<", "Search", new { page = 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        @Html.Raw("&nbsp;");
+        @Html.ActionLink("< Prev", "Search", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+    }
+    else
+    {
+        @:<<
+        @Html.Raw("&nbsp;");
+        @:< Prev
+    }
+    &nbsp;
+    @if (Model.HasNextPage)
+    {
+        
+        @Html.ActionLink("Next >", "Search", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        @Html.Raw("&nbsp;");
+        @Html.ActionLink(">>", "Search", new { page = Model.PageCount, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+    }
+    else
+    {
+        @:Next >
+        @Html.Raw("&nbsp;")
+        @:>>
+    }
+</div>
+    
+}
+

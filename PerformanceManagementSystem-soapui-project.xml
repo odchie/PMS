@@ -1,0 +1,2583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="PerformanceManagementSystem" resourceRoot="" soapui-version="4.5.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="CommonManagementServiceEndpointBinding" type="wsdl" bindingName="{http://ws.model.common.app.pms.logica.com/}CommonManagementServiceEndpointBinding" soapVersion="1_1" anonymous="optional" definition="http://PH-DT5HR1S:9090/CommonManagementService/CommonManagementService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://PH-DT5HR1S:9090/CommonManagementService/CommonManagementService?wsdl"><con:part><con:url>http://PH-DT5HR1S:9090/CommonManagementService/CommonManagementService?wsdl</con:url><con:content><![CDATA[<definitions name="CommonManagementService" targetNamespace="http://ws.model.common.app.pms.logica.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.model.common.app.pms.logica.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xs:schema targetNamespace="http://ws.model.common.app.pms.logica.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="deleteDepartment" type="tns:deleteDepartment"/>
+      <xs:element name="deleteDepartmentResponse" type="tns:deleteDepartmentResponse"/>
+      <xs:element name="deleteJob" type="tns:deleteJob"/>
+      <xs:element name="deleteJobResponse" type="tns:deleteJobResponse"/>
+      <xs:element name="getAllCountries" type="tns:getAllCountries"/>
+      <xs:element name="getAllCountriesResponse" type="tns:getAllCountriesResponse"/>
+      <xs:element name="getAllDepartments" type="tns:getAllDepartments"/>
+      <xs:element name="getAllDepartmentsResponse" type="tns:getAllDepartmentsResponse"/>
+      <xs:element name="getAllJobs" type="tns:getAllJobs"/>
+      <xs:element name="getAllJobsResponse" type="tns:getAllJobsResponse"/>
+      <xs:element name="getAllOfficeLocations" type="tns:getAllOfficeLocations"/>
+      <xs:element name="getAllOfficeLocationsResponse" type="tns:getAllOfficeLocationsResponse"/>
+      <xs:element name="getDepartment" type="tns:getDepartment"/>
+      <xs:element name="getDepartmentResponse" type="tns:getDepartmentResponse"/>
+      <xs:element name="getJob" type="tns:getJob"/>
+      <xs:element name="getJobResponse" type="tns:getJobResponse"/>
+      <xs:element name="saveDepartment" type="tns:saveDepartment"/>
+      <xs:element name="saveDepartmentResponse" type="tns:saveDepartmentResponse"/>
+      <xs:element name="saveJob" type="tns:saveJob"/>
+      <xs:element name="saveJobResponse" type="tns:saveJobResponse"/>
+      <xs:element name="searchDepartment" type="tns:searchDepartment"/>
+      <xs:element name="searchDepartmentResponse" type="tns:searchDepartmentResponse"/>
+      <xs:element name="searchJob" type="tns:searchJob"/>
+      <xs:element name="searchJobResponse" type="tns:searchJobResponse"/>
+      <xs:element name="updateDeparment" type="tns:updateDeparment"/>
+      <xs:element name="updateDeparmentResponse" type="tns:updateDeparmentResponse"/>
+      <xs:element name="updateJob" type="tns:updateJob"/>
+      <xs:element name="updateJobResponse" type="tns:updateJobResponse"/>
+      <xs:complexType name="deleteJob">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:deleteJobRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteJobRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="reason" type="xs:string"/>
+              <xs:element name="jobId" type="xs:long"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:request">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="request">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="deleteJobResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:DeleteJobResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteJobResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:response">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="codeMessages" type="tns:codeMessage"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="response">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="codeMessage">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getJob">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getJobRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getJobRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="jobId" type="xs:long"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getJobResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetJobResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetJobResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="jobId" type="xs:long"/>
+              <xs:element name="jobTitle" type="xs:string"/>
+              <xs:element name="code" type="xs:string"/>
+              <xs:element name="minSalary" type="xs:long"/>
+              <xs:element name="maxSalary" type="xs:long"/>
+              <xs:element name="status" type="xs:string"/>
+              <xs:element name="recordStatusId" type="xs:long"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllJobs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllJobsRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllJobsRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllJobsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:RetrieveAllJobResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetrieveAllJobResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="jobList" type="tns:jobInfoDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="jobInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:string"/>
+          <xs:element minOccurs="0" name="createBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="maxSalary" type="xs:long"/>
+          <xs:element minOccurs="0" name="minSalary" type="xs:long"/>
+          <xs:element minOccurs="0" name="recordStausId" type="xs:long"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element minOccurs="0" name="title" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDepartment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getDepartmentRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDepartmentRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="deptId" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getDepartmentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetDepartmentResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetDepartmentResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="deptId" type="xs:long"/>
+              <xs:element name="deptName" type="xs:string"/>
+              <xs:element name="deptDesc" type="xs:string"/>
+              <xs:element name="managerId" type="xs:string"/>
+              <xs:element name="locationId" type="xs:string"/>
+              <xs:element name="createDate" type="xs:string"/>
+              <xs:element name="createBy" type="xs:string"/>
+              <xs:element name="status" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveDepartment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:saveDepartmentRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveDepartmentRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="deptName" type="xs:string"/>
+              <xs:element minOccurs="0" name="deptDescription" type="xs:string"/>
+              <xs:element minOccurs="0" name="locationId" type="xs:string"/>
+              <xs:element name="managerId" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveDepartmentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SaveDepartmentResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SaveDepartmentResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="deleteDepartment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:deleteDepartmentRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteDepartmentRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="deptId" type="xs:long"/>
+              <xs:element minOccurs="0" name="reason" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="deleteDepartmentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:DeleteDepartmentResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteDepartmentResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="searchDepartment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:searchDepartmentRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchDepartmentRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="deptId" type="xs:string"/>
+              <xs:element minOccurs="0" name="deptName" type="xs:string"/>
+              <xs:element minOccurs="0" name="managerId" type="xs:string"/>
+              <xs:element minOccurs="0" name="locationId" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="searchDepartmentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SearchDepartmentResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchDepartmentResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="departments" type="tns:departmentInfoDTO"/>
+              <xs:element name="noOfTotalHits" type="xs:int"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="departmentInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="deptDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="deptId" type="xs:long"/>
+          <xs:element minOccurs="0" name="deptName" type="xs:string"/>
+          <xs:element minOccurs="0" name="locationId" type="xs:string"/>
+          <xs:element minOccurs="0" name="managerId" type="xs:string"/>
+          <xs:element name="status" type="xs:int"/>
+          <xs:element minOccurs="0" name="updateBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveJob">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:saveJobRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveJobRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="jobCode" type="xs:string"/>
+              <xs:element minOccurs="0" name="jobTitle" type="xs:string"/>
+              <xs:element minOccurs="0" name="maxSalary" type="xs:long"/>
+              <xs:element minOccurs="0" name="minSalary" type="xs:long"/>
+              <xs:element name="status" type="xs:string"/>
+              <xs:element name="recordStatusId" type="xs:long"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveJobResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SaveJobResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SaveJobResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="jobId" type="xs:long"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="searchJob">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:searchJobRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchJobRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="jobId" type="xs:long"/>
+              <xs:element minOccurs="0" name="jobCode" type="xs:string"/>
+              <xs:element minOccurs="0" name="jobTitle" type="xs:string"/>
+              <xs:element minOccurs="0" name="jobStatus" type="xs:string"/>
+              <xs:element minOccurs="0" name="startIndex" type="xs:int"/>
+              <xs:element minOccurs="0" name="endIndex" type="xs:int"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="searchJobResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SearchJobResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchJobResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="endIndex" type="xs:int"/>
+              <xs:element name="noOfTotalHits" type="xs:int"/>
+              <xs:element name="startIndex" type="xs:int"/>
+              <xs:element maxOccurs="unbounded" name="jobList" type="tns:jobInfoDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateJob">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:updateJobRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateJobRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="jobId" type="xs:long"/>
+              <xs:element name="jobCode" type="xs:string"/>
+              <xs:element minOccurs="0" name="jobTitle" type="xs:string"/>
+              <xs:element name="status" type="xs:string"/>
+              <xs:element minOccurs="0" name="maxSalary" type="xs:long"/>
+              <xs:element minOccurs="0" name="minSalary" type="xs:long"/>
+              <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+              <xs:element name="recordStatusId" type="xs:long"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateJobResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:UpdateJobResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateJobResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllCountries">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllCountriesRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCountriesRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllCountriesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllCountriesResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllCountriesResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="countries" type="tns:countryDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="countryDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="regionId" type="xs:long"/>
+          <xs:element name="status" type="xs:int"/>
+          <xs:element minOccurs="0" name="updateBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllDepartments">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllDepartmentsRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllDepartmentsRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllDepartmentsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:RetrieveAllDepartmentResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetrieveAllDepartmentResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="departmentList" type="tns:departmentInfoDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllOfficeLocations">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllOfficeLocationsRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllOfficeLocationsRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllOfficeLocationsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllOfficeLocationsResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllOfficeLocationsResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="officeLocations" type="tns:officeLocationDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="officeLocationDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element name="status" type="xs:int"/>
+          <xs:element minOccurs="0" name="updateBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateDeparment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:updateDepartmentRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateDepartmentRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="deptId" type="xs:long"/>
+              <xs:element minOccurs="0" name="deptName" type="xs:string"/>
+              <xs:element minOccurs="0" name="deptDesc" type="xs:string"/>
+              <xs:element minOccurs="0" name="locationId" type="xs:string"/>
+              <xs:element minOccurs="0" name="managerId" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateDeparmentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:UpdateDepartmentResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateDepartmentResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="CommonManagementServiceEndpoint_getDepartment">
+    <part element="tns:getDepartment" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getAllJobs">
+    <part element="tns:getAllJobs" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_saveDepartment">
+    <part element="tns:saveDepartment" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_updateJobResponse">
+    <part element="tns:updateJobResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_updateDeparmentResponse">
+    <part element="tns:updateDeparmentResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getAllOfficeLocations">
+    <part element="tns:getAllOfficeLocations" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_searchDepartmentResponse">
+    <part element="tns:searchDepartmentResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_deleteDepartmentResponse">
+    <part element="tns:deleteDepartmentResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getAllCountries">
+    <part element="tns:getAllCountries" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getJobResponse">
+    <part element="tns:getJobResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getJob">
+    <part element="tns:getJob" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getAllDepartmentsResponse">
+    <part element="tns:getAllDepartmentsResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getAllCountriesResponse">
+    <part element="tns:getAllCountriesResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_updateDeparment">
+    <part element="tns:updateDeparment" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_saveJob">
+    <part element="tns:saveJob" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_deleteDepartment">
+    <part element="tns:deleteDepartment" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getAllDepartments">
+    <part element="tns:getAllDepartments" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_updateJob">
+    <part element="tns:updateJob" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_searchJobResponse">
+    <part element="tns:searchJobResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_deleteJob">
+    <part element="tns:deleteJob" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getAllJobsResponse">
+    <part element="tns:getAllJobsResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getDepartmentResponse">
+    <part element="tns:getDepartmentResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_deleteJobResponse">
+    <part element="tns:deleteJobResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_searchDepartment">
+    <part element="tns:searchDepartment" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_saveDepartmentResponse">
+    <part element="tns:saveDepartmentResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_saveJobResponse">
+    <part element="tns:saveJobResponse" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_searchJob">
+    <part element="tns:searchJob" name="parameters"/>
+  </message>
+  <message name="CommonManagementServiceEndpoint_getAllOfficeLocationsResponse">
+    <part element="tns:getAllOfficeLocationsResponse" name="parameters"/>
+  </message>
+  <portType name="CommonManagementServiceEndpoint">
+    <operation name="deleteDepartment" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_deleteDepartment"/>
+      <output message="tns:CommonManagementServiceEndpoint_deleteDepartmentResponse"/>
+    </operation>
+    <operation name="deleteJob" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_deleteJob"/>
+      <output message="tns:CommonManagementServiceEndpoint_deleteJobResponse"/>
+    </operation>
+    <operation name="getAllCountries" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_getAllCountries"/>
+      <output message="tns:CommonManagementServiceEndpoint_getAllCountriesResponse"/>
+    </operation>
+    <operation name="getAllDepartments" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_getAllDepartments"/>
+      <output message="tns:CommonManagementServiceEndpoint_getAllDepartmentsResponse"/>
+    </operation>
+    <operation name="getAllJobs" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_getAllJobs"/>
+      <output message="tns:CommonManagementServiceEndpoint_getAllJobsResponse"/>
+    </operation>
+    <operation name="getAllOfficeLocations" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_getAllOfficeLocations"/>
+      <output message="tns:CommonManagementServiceEndpoint_getAllOfficeLocationsResponse"/>
+    </operation>
+    <operation name="getDepartment" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_getDepartment"/>
+      <output message="tns:CommonManagementServiceEndpoint_getDepartmentResponse"/>
+    </operation>
+    <operation name="getJob" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_getJob"/>
+      <output message="tns:CommonManagementServiceEndpoint_getJobResponse"/>
+    </operation>
+    <operation name="saveDepartment" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_saveDepartment"/>
+      <output message="tns:CommonManagementServiceEndpoint_saveDepartmentResponse"/>
+    </operation>
+    <operation name="saveJob" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_saveJob"/>
+      <output message="tns:CommonManagementServiceEndpoint_saveJobResponse"/>
+    </operation>
+    <operation name="searchDepartment" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_searchDepartment"/>
+      <output message="tns:CommonManagementServiceEndpoint_searchDepartmentResponse"/>
+    </operation>
+    <operation name="searchJob" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_searchJob"/>
+      <output message="tns:CommonManagementServiceEndpoint_searchJobResponse"/>
+    </operation>
+    <operation name="updateDeparment" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_updateDeparment"/>
+      <output message="tns:CommonManagementServiceEndpoint_updateDeparmentResponse"/>
+    </operation>
+    <operation name="updateJob" parameterOrder="parameters">
+      <input message="tns:CommonManagementServiceEndpoint_updateJob"/>
+      <output message="tns:CommonManagementServiceEndpoint_updateJobResponse"/>
+    </operation>
+  </portType>
+  <binding name="CommonManagementServiceEndpointBinding" type="tns:CommonManagementServiceEndpoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="deleteDepartment">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deleteJob">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllCountries">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllDepartments">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllJobs">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllOfficeLocations">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getDepartment">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getJob">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="saveDepartment">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="saveJob">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="searchDepartment">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="searchJob">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="updateDeparment">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="updateJob">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CommonManagementService">
+    <port binding="tns:CommonManagementServiceEndpointBinding" name="CommonManagementServiceEndpointPort">
+      <soap:address location="http://128.129.248.25:9090/CommonManagementService/CommonManagementService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://PH-R8F3ECT:8080/CommonManagementService/CommonManagementService</con:endpoint><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="deleteDepartment" bindingOperationName="deleteDepartment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:deleteDepartment>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <reason>?</reason>
+            <id>?</id>
+         </arg0>
+      </ws:deleteDepartment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/deleteDepartmentRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteJob" bindingOperationName="deleteJob" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:deleteJob>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <reason>?</reason>
+            <id>?</id>
+         </arg0>
+      </ws:deleteJob>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/deleteJobRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getDepartment" bindingOperationName="getDepartment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getDepartment>
+         <!--Optional:-->
+         <arg0>
+            <key>?</key>
+            <value>?</value>
+         </arg0>
+      </ws:getDepartment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/getDepartmentRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getJob" bindingOperationName="getJob" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getJob>
+         <!--Optional:-->
+         <arg0>
+            <key>?</key>
+            <value>?</value>
+         </arg0>
+      </ws:getJob>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/getJobRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="saveDepartment" bindingOperationName="saveDepartment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:saveDepartment>
+         <!--Optional:-->
+         <arg0>
+            <deptId>?</deptId>
+            <deptName>?</deptName>
+            <!--Optional:-->
+            <locationId>?</locationId>
+            <managerId>?</managerId>
+         </arg0>
+      </ws:saveDepartment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/saveDepartmentRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="saveJob" bindingOperationName="saveJob" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:saveJob>
+         <!--Optional:-->
+         <arg0>
+            <jobId>?</jobId>
+            <jobTitle>?</jobTitle>
+            <maxSalary>?</maxSalary>
+            <!--Optional:-->
+            <minSalary>?</minSalary>
+         </arg0>
+      </ws:saveJob>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/saveJobRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="searchDepartment" bindingOperationName="searchDepartment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:searchDepartment>
+         <!--Optional:-->
+         <arg0>
+            <deptId>?</deptId>
+            <deptName>?</deptName>
+            <!--Optional:-->
+            <managerId>?</managerId>
+            <locationId>?</locationId>
+         </arg0>
+      </ws:searchDepartment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/searchDepartmentRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="searchJob" bindingOperationName="searchJob" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:searchJob>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <jobId>?</jobId>
+            <jobStatus>?</jobStatus>
+            <jobTitle>?</jobTitle>
+         </arg0>
+      </ws:searchJob>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/searchJobRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateDeparment" bindingOperationName="updateDeparment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateDeparment>
+         <!--Optional:-->
+         <arg0>
+            <deptId>?</deptId>
+            <deptName>?</deptName>
+            <!--Optional:-->
+            <locationId>?</locationId>
+            <managerId>?</managerId>
+         </arg0>
+      </ws:updateDeparment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/updateDeparmentRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateJob" bindingOperationName="updateJob" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateJob>
+         <!--Optional:-->
+         <arg0>
+            <jobTitle>?</jobTitle>
+            <maxSalary>?</maxSalary>
+            <!--Optional:-->
+            <minSalary>?</minSalary>
+         </arg0>
+      </ws:updateJob>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/updateJobRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAllCountries" bindingOperationName="getAllCountries" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAllCountries>
+         <!--Optional:-->
+         <arg0/>
+      </ws:getAllCountries>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>user</con:username><con:password>password</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/getAllCountriesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAllDepartments" bindingOperationName="getAllDepartments" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAllDepartments>
+         <!--Optional:-->
+         <arg0/>
+      </ws:getAllDepartments>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>user</con:username><con:password>password</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/getAllDepartmentsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAllJobs" bindingOperationName="getAllJobs" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAllJobs>
+         <!--Optional:-->
+         <arg0/>
+      </ws:getAllJobs>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/getAllJobsRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAllOfficeLocations" bindingOperationName="getAllOfficeLocations" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/CommonManagementService/CommonManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.common.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAllOfficeLocations>
+         <!--Optional:-->
+         <arg0/>
+      </ws:getAllOfficeLocations>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.common.app.pms.logica.com/CommonManagementServiceEndpoint/getAllOfficeLocationsRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="UserManagementServiceEndpointBinding" type="wsdl" bindingName="{http://ws.model.usermanagement.app.pms.logica.com/}UserManagementServiceEndpointBinding" soapVersion="1_1" anonymous="optional" definition="http://ph-dt5hr1s:9090/UserManagementService/UserManagementService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://ph-dt5hr1s:9090/UserManagementService/UserManagementService?wsdl"><con:part><con:url>http://ph-dt5hr1s:9090/UserManagementService/UserManagementService?wsdl</con:url><con:content><![CDATA[<definitions name="UserManagementService" targetNamespace="http://ws.model.usermanagement.app.pms.logica.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.model.usermanagement.app.pms.logica.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xs:schema targetNamespace="http://ws.model.usermanagement.app.pms.logica.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="activateAccount" type="tns:activateAccount"/>
+      <xs:element name="activateAccountResponse" type="tns:activateAccountResponse"/>
+      <xs:element name="activateByEmail" type="tns:activateByEmail"/>
+      <xs:element name="activateByEmailResponse" type="tns:activateByEmailResponse"/>
+      <xs:element name="blockAccount" type="tns:blockAccount"/>
+      <xs:element name="blockAccountResponse" type="tns:blockAccountResponse"/>
+      <xs:element name="checkPassword" type="tns:checkPassword"/>
+      <xs:element name="checkPasswordResponse" type="tns:checkPasswordResponse"/>
+      <xs:element name="deleteAccount" type="tns:deleteAccount"/>
+      <xs:element name="deleteAccountResponse" type="tns:deleteAccountResponse"/>
+      <xs:element name="getAccount" type="tns:getAccount"/>
+      <xs:element name="getAccountResponse" type="tns:getAccountResponse"/>
+      <xs:element name="getAccountState" type="tns:getAccountState"/>
+      <xs:element name="getAccountStateResponse" type="tns:getAccountStateResponse"/>
+      <xs:element name="lockAccount" type="tns:lockAccount"/>
+      <xs:element name="lockAccountResponse" type="tns:lockAccountResponse"/>
+      <xs:element name="saveAccount" type="tns:saveAccount"/>
+      <xs:element name="saveAccountResponse" type="tns:saveAccountResponse"/>
+      <xs:element name="searchAccount" type="tns:searchAccount"/>
+      <xs:element name="searchAccountResponse" type="tns:searchAccountResponse"/>
+      <xs:element name="updateAccount" type="tns:updateAccount"/>
+      <xs:element name="updateAccountResponse" type="tns:updateAccountResponse"/>
+      <xs:complexType name="getAccountState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAccountStateRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccountStateRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="getAccountId" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:request">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="request">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getAccountStateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAccountStateResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountStateResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="state" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:response">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="codeMessages" type="tns:codeMessage"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="response">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="codeMessage">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateByEmail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:activateByEmailRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateByEmailRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="activateByEmailId" type="xs:long"/>
+              <xs:element name="activationToken" type="xs:string"/>
+              <xs:element name="email" type="xs:string"/>
+              <xs:element name="userName" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="activateByEmailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:ActivateByEmailResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ActivateByEmailResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:updateAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:saveAccountRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="accountId" type="xs:long"/>
+              <xs:element minOccurs="0" name="reason" type="xs:string"/>
+              <xs:element name="recordStatus" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="activationToken" type="xs:string"/>
+              <xs:element minOccurs="0" name="address" type="xs:string"/>
+              <xs:element minOccurs="0" name="age" type="xs:string"/>
+              <xs:element minOccurs="0" name="birthday" type="xs:dateTime"/>
+              <xs:element minOccurs="0" name="civilStatus" type="xs:string"/>
+              <xs:element name="countryId" type="xs:string"/>
+              <xs:element name="email" type="xs:string"/>
+              <xs:element name="firstName" type="xs:string"/>
+              <xs:element minOccurs="0" name="homeNo" type="xs:string"/>
+              <xs:element name="lastName" type="xs:string"/>
+              <xs:element minOccurs="0" name="middleName" type="xs:string"/>
+              <xs:element minOccurs="0" name="passportExpiry" type="xs:string"/>
+              <xs:element minOccurs="0" name="passportNo" type="xs:string"/>
+              <xs:element minOccurs="0" name="primaryNo" type="xs:string"/>
+              <xs:element minOccurs="0" name="secondaryNo" type="xs:string"/>
+              <xs:element minOccurs="0" name="sex" type="xs:string"/>
+              <xs:element minOccurs="0" name="socialSecNumber" type="xs:string"/>
+              <xs:element minOccurs="0" name="startDateExp" type="xs:string"/>
+              <xs:element name="type" type="xs:string"/>
+              <xs:element minOccurs="0" name="yrsItExp" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:UpdateAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="key" type="xs:string"/>
+              <xs:element name="value" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="activationToken" type="xs:string"/>
+              <xs:element minOccurs="0" name="age" type="xs:string"/>
+              <xs:element minOccurs="0" name="birthday" type="xs:dateTime"/>
+              <xs:element minOccurs="0" name="country" type="xs:string"/>
+              <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+              <xs:element minOccurs="0" name="email" type="xs:string"/>
+              <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+              <xs:element minOccurs="0" name="id" type="xs:string"/>
+              <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+              <xs:element minOccurs="0" name="middleName" type="xs:string"/>
+              <xs:element minOccurs="0" name="password" type="xs:string"/>
+              <xs:element minOccurs="0" name="reason" type="xs:string"/>
+              <xs:element minOccurs="0" name="sex" type="xs:string"/>
+              <xs:element minOccurs="0" name="socialSecNumber" type="xs:string"/>
+              <xs:element minOccurs="0" name="status" type="xs:string"/>
+              <xs:element minOccurs="0" name="statusChangeBy" type="xs:string"/>
+              <xs:element minOccurs="0" name="statusChangeReason" type="xs:string"/>
+              <xs:element minOccurs="0" name="statusChangeTime" type="xs:dateTime"/>
+              <xs:element minOccurs="0" name="type" type="xs:string"/>
+              <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+              <xs:element minOccurs="0" name="userName" type="xs:string"/>
+              <xs:element minOccurs="0" name="passportNo" type="xs:string"/>
+              <xs:element minOccurs="0" name="passportExpiry" type="xs:dateTime"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:saveAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SaveAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SaveAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="id" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="searchAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:searchAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="accountId" type="xs:long"/>
+              <xs:element minOccurs="0" name="email" type="xs:string"/>
+              <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+              <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="searchAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SearchAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="noOfTotalHits" type="xs:int"/>
+              <xs:element maxOccurs="unbounded" name="userAccountList" type="tns:accountInfoDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="accountInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activationToken" type="xs:string"/>
+          <xs:element minOccurs="0" name="address" type="xs:string"/>
+          <xs:element minOccurs="0" name="age" type="xs:int"/>
+          <xs:element minOccurs="0" name="birthDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="civilStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="countryId" type="xs:int"/>
+          <xs:element minOccurs="0" name="externalEmail" type="xs:string"/>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="homeNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="middleName" type="xs:string"/>
+          <xs:element minOccurs="0" name="passportExpiry" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="passportNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="primaryNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="recordStatus" type="xs:int"/>
+          <xs:element minOccurs="0" name="resume" type="xs:string"/>
+          <xs:element minOccurs="0" name="secondaryNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="sex" type="xs:string"/>
+          <xs:element minOccurs="0" name="socialSecNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="startDateExp" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element minOccurs="0" name="type" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+          <xs:element minOccurs="0" name="yrsItExp" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:activateAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="activateAccountId" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="activateAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:ActivateAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ActivateAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="result" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="blockAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:blockAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="blockAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="blockAccountId" type="xs:long"/>
+              <xs:element name="statusChangeReason" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="blockAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:BlockAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BlockAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="isBlocked" type="xs:boolean"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="checkPassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:checkPasswordRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkPasswordRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="checkPasswordResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:CheckPasswordResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CheckPasswordResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="deleteAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:deleteAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="deleteAccountId" type="xs:string"/>
+              <xs:element minOccurs="0" name="statusChangeReason" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="deleteAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:DeleteAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="personId" type="xs:string"/>
+              <xs:element name="isDeleted" type="xs:boolean"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="lockAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:lockAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="lockAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="lockAccountId" type="xs:long"/>
+              <xs:element name="statusChangeReason" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="lockAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:LockAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LockAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="result" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="UserManagementServiceEndpoint_saveAccount">
+    <part element="tns:saveAccount" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_getAccountStateResponse">
+    <part element="tns:getAccountStateResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_getAccount">
+    <part element="tns:getAccount" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_lockAccountResponse">
+    <part element="tns:lockAccountResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_getAccountState">
+    <part element="tns:getAccountState" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_searchAccountResponse">
+    <part element="tns:searchAccountResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_checkPassword">
+    <part element="tns:checkPassword" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_updateAccount">
+    <part element="tns:updateAccount" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_deleteAccountResponse">
+    <part element="tns:deleteAccountResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_updateAccountResponse">
+    <part element="tns:updateAccountResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_searchAccount">
+    <part element="tns:searchAccount" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_checkPasswordResponse">
+    <part element="tns:checkPasswordResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_saveAccountResponse">
+    <part element="tns:saveAccountResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_activateAccount">
+    <part element="tns:activateAccount" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_activateByEmailResponse">
+    <part element="tns:activateByEmailResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_getAccountResponse">
+    <part element="tns:getAccountResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_blockAccountResponse">
+    <part element="tns:blockAccountResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_deleteAccount">
+    <part element="tns:deleteAccount" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_activateAccountResponse">
+    <part element="tns:activateAccountResponse" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_blockAccount">
+    <part element="tns:blockAccount" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_lockAccount">
+    <part element="tns:lockAccount" name="parameters"/>
+  </message>
+  <message name="UserManagementServiceEndpoint_activateByEmail">
+    <part element="tns:activateByEmail" name="parameters"/>
+  </message>
+  <portType name="UserManagementServiceEndpoint">
+    <operation name="activateAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_activateAccount"/>
+      <output message="tns:UserManagementServiceEndpoint_activateAccountResponse"/>
+    </operation>
+    <operation name="activateByEmail" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_activateByEmail"/>
+      <output message="tns:UserManagementServiceEndpoint_activateByEmailResponse"/>
+    </operation>
+    <operation name="blockAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_blockAccount"/>
+      <output message="tns:UserManagementServiceEndpoint_blockAccountResponse"/>
+    </operation>
+    <operation name="checkPassword" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_checkPassword"/>
+      <output message="tns:UserManagementServiceEndpoint_checkPasswordResponse"/>
+    </operation>
+    <operation name="deleteAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_deleteAccount"/>
+      <output message="tns:UserManagementServiceEndpoint_deleteAccountResponse"/>
+    </operation>
+    <operation name="getAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_getAccount"/>
+      <output message="tns:UserManagementServiceEndpoint_getAccountResponse"/>
+    </operation>
+    <operation name="getAccountState" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_getAccountState"/>
+      <output message="tns:UserManagementServiceEndpoint_getAccountStateResponse"/>
+    </operation>
+    <operation name="lockAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_lockAccount"/>
+      <output message="tns:UserManagementServiceEndpoint_lockAccountResponse"/>
+    </operation>
+    <operation name="saveAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_saveAccount"/>
+      <output message="tns:UserManagementServiceEndpoint_saveAccountResponse"/>
+    </operation>
+    <operation name="searchAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_searchAccount"/>
+      <output message="tns:UserManagementServiceEndpoint_searchAccountResponse"/>
+    </operation>
+    <operation name="updateAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_updateAccount"/>
+      <output message="tns:UserManagementServiceEndpoint_updateAccountResponse"/>
+    </operation>
+  </portType>
+  <binding name="UserManagementServiceEndpointBinding" type="tns:UserManagementServiceEndpoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="activateAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="activateByEmail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="blockAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="checkPassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deleteAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAccountState">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="lockAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="saveAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="searchAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="updateAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="UserManagementService">
+    <port binding="tns:UserManagementServiceEndpointBinding" name="UserManagementServiceEndpointPort">
+      <soap:address location="http://128.129.248.25:9090/UserManagementService/UserManagementService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://PH-DT5HR1S:9090/UserManagementService/UserManagementService</con:endpoint><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="activateAccount" bindingOperationName="activateAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:activateAccount>
+         <!--Optional:-->
+         <arg0>
+            <activateAccountId>?</activateAccountId>
+         </arg0>
+      </ws:activateAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/activateAccountRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="activateByEmail" bindingOperationName="activateByEmail" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:activateByEmail>
+         <!--Optional:-->
+         <arg0>
+            <activateByEmailId>?</activateByEmailId>
+            <activationToken>?</activationToken>
+            <email>?</email>
+            <userName>?</userName>
+         </arg0>
+      </ws:activateByEmail>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/activateByEmailRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="blockAccount" bindingOperationName="blockAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:blockAccount>
+         <!--Optional:-->
+         <arg0>
+            <blockAccountId>?</blockAccountId>
+            <status>?</status>
+            <statusChangeReason>?</statusChangeReason>
+         </arg0>
+      </ws:blockAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/blockAccountRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="checkPassword" bindingOperationName="checkPassword" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:checkPassword>
+         <!--Optional:-->
+         <arg0>
+            <password>?</password>
+         </arg0>
+      </ws:checkPassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/checkPasswordRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteAccount" bindingOperationName="deleteAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:deleteAccount>
+         <!--Optional:-->
+         <arg0>
+            <deleteAccountId>?</deleteAccountId>
+            <!--Optional:-->
+            <statusChangeReason>?</statusChangeReason>
+         </arg0>
+      </ws:deleteAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/deleteAccountRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAccount" bindingOperationName="getAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://PH-DT5HR1S:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAccount>
+         <!--Optional:-->
+         <arg0>
+            <key>ID</key>
+            <value>10288</value>
+         </arg0>
+      </ws:getAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>user</con:username><con:password>password</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/getAccountRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAccountState" bindingOperationName="getAccountState" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAccountState>
+         <!--Optional:-->
+         <arg0>
+            <getAccountId>?</getAccountId>
+         </arg0>
+      </ws:getAccountState>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/getAccountStateRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="lockAccount" bindingOperationName="lockAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:lockAccount>
+         <!--Optional:-->
+         <arg0>
+            <lockAccountId>?</lockAccountId>
+            <email>?</email>
+            <status>?</status>
+            <statusChangeReason>?</statusChangeReason>
+            <userName>?</userName>
+         </arg0>
+      </ws:lockAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/lockAccountRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="saveAccount" bindingOperationName="saveAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:saveAccount>
+         <!--Optional:-->
+         <arg0>
+            <saveAccountId>?</saveAccountId>
+            <!--Optional:-->
+            <activationToken>?</activationToken>
+            <!--Optional:-->
+            <age>?</age>
+            <!--Optional:-->
+            <birthday>?</birthday>
+            <!--Optional:-->
+            <country>?</country>
+            <email>?</email>
+            <firstName>?</firstName>
+            <lastName>?</lastName>
+            <!--Optional:-->
+            <middleName>?</middleName>
+            <!--Optional:-->
+            <reason>?</reason>
+            <!--Optional:-->
+            <sex>?</sex>
+            <!--Optional:-->
+            <socialSecNumber>?</socialSecNumber>
+            <!--Optional:-->
+            <status>?</status>
+            <!--Optional:-->
+            <statusChangeBy>?</statusChangeBy>
+            <!--Optional:-->
+            <statusChangeReason>?</statusChangeReason>
+            <!--Optional:-->
+            <type>?</type>
+            <!--Optional:-->
+            <civilStatus>?</civilStatus>
+         </arg0>
+      </ws:saveAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/saveAccountRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="searchAccount" bindingOperationName="searchAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:searchAccount>
+         <!--Optional:-->
+         <arg0>
+            <searchAccountId>?</searchAccountId>
+            <email>?</email>
+            <endIndex>?</endIndex>
+            <!--Optional:-->
+            <firstName>?</firstName>
+            <!--Optional:-->
+            <lastName>?</lastName>
+            <startIndex>?</startIndex>
+         </arg0>
+      </ws:searchAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/searchAccountRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateAccount" bindingOperationName="updateAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/UserManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateAccount>
+         <!--Optional:-->
+         <arg0>
+            <saveAccountId>?</saveAccountId>
+            <!--Optional:-->
+            <activationToken>?</activationToken>
+            <!--Optional:-->
+            <age>?</age>
+            <!--Optional:-->
+            <birthday>?</birthday>
+            <!--Optional:-->
+            <country>?</country>
+            <email>?</email>
+            <firstName>?</firstName>
+            <lastName>?</lastName>
+            <!--Optional:-->
+            <middleName>?</middleName>
+            <!--Optional:-->
+            <reason>?</reason>
+            <!--Optional:-->
+            <sex>?</sex>
+            <!--Optional:-->
+            <socialSecNumber>?</socialSecNumber>
+            <!--Optional:-->
+            <status>?</status>
+            <!--Optional:-->
+            <statusChangeBy>?</statusChangeBy>
+            <!--Optional:-->
+            <statusChangeReason>?</statusChangeReason>
+            <!--Optional:-->
+            <type>?</type>
+            <!--Optional:-->
+            <civilStatus>?</civilStatus>
+         </arg0>
+      </ws:updateAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/UserManagementServiceEndpoint/updateAccountRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="EmployeeManagementServiceEndpointBinding" type="wsdl" bindingName="{http://ws.model.usermanagement.app.pms.logica.com/}EmployeeManagementServiceEndpointBinding" soapVersion="1_1" anonymous="optional" definition="http://PH-DT5HR1S:9090/UserManagementService/EmployeeManagementService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://PH-DT5HR1S:9090/UserManagementService/EmployeeManagementService?wsdl"><con:part><con:url>http://PH-DT5HR1S:9090/UserManagementService/EmployeeManagementService?wsdl</con:url><con:content><![CDATA[<definitions name="EmployeeManagementService" targetNamespace="http://ws.model.usermanagement.app.pms.logica.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.model.usermanagement.app.pms.logica.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xs:schema targetNamespace="http://ws.model.usermanagement.app.pms.logica.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="approveEmployee" type="tns:approveEmployee"/>
+      <xs:element name="approveEmployeeResponse" type="tns:approveEmployeeResponse"/>
+      <xs:element name="getAllCareerLevels" type="tns:getAllCareerLevels"/>
+      <xs:element name="getAllCareerLevelsResponse" type="tns:getAllCareerLevelsResponse"/>
+      <xs:element name="getAllCompetencyManager" type="tns:getAllCompetencyManager"/>
+      <xs:element name="getAllCompetencyManagerResponse" type="tns:getAllCompetencyManagerResponse"/>
+      <xs:element name="getAllDepartmentManager" type="tns:getAllDepartmentManager"/>
+      <xs:element name="getAllDepartmentManagerResponse" type="tns:getAllDepartmentManagerResponse"/>
+      <xs:element name="getAllManagers" type="tns:getAllManagers"/>
+      <xs:element name="getAllManagersResponse" type="tns:getAllManagersResponse"/>
+      <xs:element name="getAllStaffManagers" type="tns:getAllStaffManagers"/>
+      <xs:element name="getAllStaffManagersResponse" type="tns:getAllStaffManagersResponse"/>
+      <xs:element name="getEmployeeAccount" type="tns:getEmployeeAccount"/>
+      <xs:element name="getEmployeeAccountResponse" type="tns:getEmployeeAccountResponse"/>
+      <xs:element name="saveEmployeeAccount" type="tns:saveEmployeeAccount"/>
+      <xs:element name="saveEmployeeAccountResponse" type="tns:saveEmployeeAccountResponse"/>
+      <xs:element name="updateEmployeeAccount" type="tns:updateEmployeeAccount"/>
+      <xs:element name="updateEmployeeAccountResponse" type="tns:updateEmployeeAccountResponse"/>
+      <xs:complexType name="getAllManagers">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllManagersRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllManagersRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:request">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="request">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getAllManagersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllManagersResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllManagersResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="list" type="tns:employeeInfoDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:response">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="codeMessages" type="tns:codeMessage"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="response">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="employeeInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountInfoDTO" type="tns:accountInfoDTO"/>
+          <xs:element minOccurs="0" name="careerLevel" type="tns:careerLevelDTO"/>
+          <xs:element minOccurs="0" name="careerPathId" type="xs:int"/>
+          <xs:element minOccurs="0" name="cmptncyGrpId" type="xs:long"/>
+          <xs:element minOccurs="0" name="cmptncyId" type="xs:long"/>
+          <xs:element minOccurs="0" name="commisionPct" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="corpLocNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="departmentInfoDTO" type="tns:departmentInfoDTO"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="empStatusId" type="xs:int"/>
+          <xs:element minOccurs="0" name="empTypeId" type="xs:int"/>
+          <xs:element minOccurs="0" name="hireDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="job" type="tns:jobInfoDTO"/>
+          <xs:element minOccurs="0" name="managerId" type="xs:long"/>
+          <xs:element minOccurs="0" name="number" type="xs:string"/>
+          <xs:element minOccurs="0" name="officeLocId" type="xs:int"/>
+          <xs:element minOccurs="0" name="projMgrId" type="xs:long"/>
+          <xs:element minOccurs="0" name="recordStatus" type="xs:int"/>
+          <xs:element minOccurs="0" name="requestId" type="xs:string"/>
+          <xs:element minOccurs="0" name="rohq" type="xs:string"/>
+          <xs:element minOccurs="0" name="salary" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="seatNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="accountInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activationToken" type="xs:string"/>
+          <xs:element minOccurs="0" name="address" type="xs:string"/>
+          <xs:element minOccurs="0" name="age" type="xs:int"/>
+          <xs:element minOccurs="0" name="birthDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="civilStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="countryId" type="xs:int"/>
+          <xs:element minOccurs="0" name="externalEmail" type="xs:string"/>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="homeNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="middleName" type="xs:string"/>
+          <xs:element minOccurs="0" name="passportExpiry" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="passportNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="primaryNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="recordStatus" type="xs:int"/>
+          <xs:element minOccurs="0" name="resume" type="xs:string"/>
+          <xs:element minOccurs="0" name="secondaryNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="sex" type="xs:string"/>
+          <xs:element minOccurs="0" name="socialSecNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="startDateExp" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element minOccurs="0" name="type" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+          <xs:element minOccurs="0" name="yrsItExp" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="careerLevelDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="careerLvl" type="xs:int"/>
+          <xs:element minOccurs="0" name="careerLvlGrp" type="xs:long"/>
+          <xs:element minOccurs="0" name="careerTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="createBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="indExp" type="xs:string"/>
+          <xs:element minOccurs="0" name="roleExp" type="xs:string"/>
+          <xs:element minOccurs="0" name="route" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="departmentInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="deptDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="deptId" type="xs:long"/>
+          <xs:element minOccurs="0" name="deptName" type="xs:string"/>
+          <xs:element minOccurs="0" name="locationId" type="xs:string"/>
+          <xs:element minOccurs="0" name="managerId" type="xs:string"/>
+          <xs:element name="status" type="xs:int"/>
+          <xs:element minOccurs="0" name="updateBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="jobInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:string"/>
+          <xs:element minOccurs="0" name="createBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="maxSalary" type="xs:long"/>
+          <xs:element minOccurs="0" name="minSalary" type="xs:long"/>
+          <xs:element minOccurs="0" name="recordStausId" type="xs:long"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element minOccurs="0" name="title" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="codeMessage">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetencyManager">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllCompetencyManagerRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetencyManagerRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetencyManagerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllCompetencyManagerResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllCompetencyManagerResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="list" type="tns:employeeInfoDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllDepartmentManager">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllDepartmentManagerRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllDepartmentManagerRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllDepartmentManagerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllDepartmentManagerResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllDepartmentManagerResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="list" type="tns:employeeInfoDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllCareerLevels">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllCareerLevelsRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCareerLevelsRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllCareerLevelsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SearchAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="noOfTotalHits" type="xs:int"/>
+              <xs:element maxOccurs="unbounded" name="careerLevels" type="tns:careerLevelDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getEmployeeAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getEmployeeAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getEmployeeAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="key" type="xs:string"/>
+              <xs:element name="value" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getEmployeeAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetEmployeeAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetEmployeeAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="id" type="xs:long"/>
+              <xs:element name="email" type="xs:string"/>
+              <xs:element name="number" type="xs:string"/>
+              <xs:element minOccurs="0" name="hireDate" type="xs:dateTime"/>
+              <xs:element name="salary" type="xs:string"/>
+              <xs:element name="commisionPct" type="xs:decimal"/>
+              <xs:element name="managerId" type="xs:long"/>
+              <xs:element name="department" type="tns:departmentInfoDTO"/>
+              <xs:element name="person" type="tns:accountInfoDTO"/>
+              <xs:element minOccurs="0" name="createDate" type="xs:dateTime"/>
+              <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+              <xs:element name="job" type="tns:jobInfoDTO"/>
+              <xs:element name="careerlevel" type="tns:careerLevelDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveEmployeeAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:saveEmployeeAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveEmployeeAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="acctType" type="xs:string"/>
+              <xs:element minOccurs="0" name="activationToken" type="xs:string"/>
+              <xs:element minOccurs="0" name="address" type="xs:string"/>
+              <xs:element minOccurs="0" name="age" type="xs:string"/>
+              <xs:element minOccurs="0" name="birthday" type="xs:dateTime"/>
+              <xs:element name="careerLevelId" type="xs:string"/>
+              <xs:element minOccurs="0" name="careerPathId" type="xs:int"/>
+              <xs:element minOccurs="0" name="civilStatus" type="xs:string"/>
+              <xs:element name="cmptncyGrpId" type="xs:string"/>
+              <xs:element name="cmptncyId" type="xs:string"/>
+              <xs:element minOccurs="0" name="commissionPct" type="xs:string"/>
+              <xs:element minOccurs="0" name="corpLocNo" type="xs:string"/>
+              <xs:element name="countryId" type="xs:string"/>
+              <xs:element name="departmentId" type="xs:long"/>
+              <xs:element name="email" type="xs:string"/>
+              <xs:element name="empTypeId" type="xs:string"/>
+              <xs:element name="firstName" type="xs:string"/>
+              <xs:element name="hireDate" type="xs:string"/>
+              <xs:element minOccurs="0" name="homeNo" type="xs:string"/>
+              <xs:element name="jobId" type="xs:string"/>
+              <xs:element minOccurs="0" name="language" type="xs:string"/>
+              <xs:element name="lastName" type="xs:string"/>
+              <xs:element minOccurs="0" name="managerId" type="xs:string"/>
+              <xs:element minOccurs="0" name="middleName" type="xs:string"/>
+              <xs:element minOccurs="0" name="officeLocId" type="xs:int"/>
+              <xs:element minOccurs="0" name="passportExpiry" type="xs:string"/>
+              <xs:element minOccurs="0" name="passportNo" type="xs:string"/>
+              <xs:element minOccurs="0" name="perId" type="xs:string"/>
+              <xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+              <xs:element minOccurs="0" name="primaryNo" type="xs:string"/>
+              <xs:element minOccurs="0" name="projMgrId" type="xs:long"/>
+              <xs:element minOccurs="0" name="requestId" type="xs:string"/>
+              <xs:element minOccurs="0" name="resumeFileName" type="xs:string"/>
+              <xs:element minOccurs="0" name="rohq" type="xs:string"/>
+              <xs:element minOccurs="0" name="salary" type="xs:string"/>
+              <xs:element minOccurs="0" name="seatNo" type="xs:string"/>
+              <xs:element minOccurs="0" name="secondaryNo" type="xs:string"/>
+              <xs:element minOccurs="0" name="sex" type="xs:string"/>
+              <xs:element minOccurs="0" name="smsNumber" type="xs:string"/>
+              <xs:element minOccurs="0" name="socialSecNo" type="xs:string"/>
+              <xs:element minOccurs="0" name="socialSecNumber" type="xs:string"/>
+              <xs:element minOccurs="0" name="startDateExp" type="xs:string"/>
+              <xs:element minOccurs="0" name="updateReason" type="xs:string"/>
+              <xs:element minOccurs="0" name="yrsItExp" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveEmployeeAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SaveAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SaveAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateEmployeeAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:updateEmployeeAccountRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateEmployeeAccountRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:saveEmployeeAccountRequest">
+            <xs:sequence>
+              <xs:element name="employeeId" type="xs:string"/>
+              <xs:element name="empStatusId" type="xs:int"/>
+              <xs:element name="recordStatus" type="xs:string"/>
+              <xs:element name="updateReason" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateEmployeeAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:UpdateAccountResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllStaffManagers">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllStaffManagersRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllStaffManagersRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllStaffManagersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllStaffManagersResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllStaffManagersResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="list" type="tns:employeeInfoDTO"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="approveEmployee">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:approveEmployeeRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="approveEmployeeRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="requestId" type="xs:string"/>
+              <xs:element name="employeeId" type="xs:long"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="approveEmployeeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:ApproveEmployeeResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ApproveEmployeeResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="EmployeeManagementServiceEndpoint_approveEmployee">
+    <part element="tns:approveEmployee" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllManagers">
+    <part element="tns:getAllManagers" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllDepartmentManagerResponse">
+    <part element="tns:getAllDepartmentManagerResponse" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllDepartmentManager">
+    <part element="tns:getAllDepartmentManager" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllStaffManagers">
+    <part element="tns:getAllStaffManagers" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_approveEmployeeResponse">
+    <part element="tns:approveEmployeeResponse" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_updateEmployeeAccountResponse">
+    <part element="tns:updateEmployeeAccountResponse" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getEmployeeAccountResponse">
+    <part element="tns:getEmployeeAccountResponse" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getEmployeeAccount">
+    <part element="tns:getEmployeeAccount" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_saveEmployeeAccount">
+    <part element="tns:saveEmployeeAccount" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllCareerLevels">
+    <part element="tns:getAllCareerLevels" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_saveEmployeeAccountResponse">
+    <part element="tns:saveEmployeeAccountResponse" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllStaffManagersResponse">
+    <part element="tns:getAllStaffManagersResponse" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllCompetencyManager">
+    <part element="tns:getAllCompetencyManager" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllCompetencyManagerResponse">
+    <part element="tns:getAllCompetencyManagerResponse" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllManagersResponse">
+    <part element="tns:getAllManagersResponse" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_updateEmployeeAccount">
+    <part element="tns:updateEmployeeAccount" name="parameters"/>
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllCareerLevelsResponse">
+    <part element="tns:getAllCareerLevelsResponse" name="parameters"/>
+  </message>
+  <portType name="EmployeeManagementServiceEndpoint">
+    <operation name="approveEmployee" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_approveEmployee"/>
+      <output message="tns:EmployeeManagementServiceEndpoint_approveEmployeeResponse"/>
+    </operation>
+    <operation name="getAllCareerLevels" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getAllCareerLevels"/>
+      <output message="tns:EmployeeManagementServiceEndpoint_getAllCareerLevelsResponse"/>
+    </operation>
+    <operation name="getAllCompetencyManager" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getAllCompetencyManager"/>
+      <output message="tns:EmployeeManagementServiceEndpoint_getAllCompetencyManagerResponse"/>
+    </operation>
+    <operation name="getAllDepartmentManager" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getAllDepartmentManager"/>
+      <output message="tns:EmployeeManagementServiceEndpoint_getAllDepartmentManagerResponse"/>
+    </operation>
+    <operation name="getAllManagers" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getAllManagers"/>
+      <output message="tns:EmployeeManagementServiceEndpoint_getAllManagersResponse"/>
+    </operation>
+    <operation name="getAllStaffManagers" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getAllStaffManagers"/>
+      <output message="tns:EmployeeManagementServiceEndpoint_getAllStaffManagersResponse"/>
+    </operation>
+    <operation name="getEmployeeAccount" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getEmployeeAccount"/>
+      <output message="tns:EmployeeManagementServiceEndpoint_getEmployeeAccountResponse"/>
+    </operation>
+    <operation name="saveEmployeeAccount" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_saveEmployeeAccount"/>
+      <output message="tns:EmployeeManagementServiceEndpoint_saveEmployeeAccountResponse"/>
+    </operation>
+    <operation name="updateEmployeeAccount" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_updateEmployeeAccount"/>
+      <output message="tns:EmployeeManagementServiceEndpoint_updateEmployeeAccountResponse"/>
+    </operation>
+  </portType>
+  <binding name="EmployeeManagementServiceEndpointBinding" type="tns:EmployeeManagementServiceEndpoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="approveEmployee">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllCareerLevels">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllCompetencyManager">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllDepartmentManager">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllManagers">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllStaffManagers">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getEmployeeAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="saveEmployeeAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="updateEmployeeAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="EmployeeManagementService">
+    <port binding="tns:EmployeeManagementServiceEndpointBinding" name="EmployeeManagementServiceEndpointPort">
+      <soap:address location="http://128.129.248.25:9090/UserManagementService/EmployeeManagementService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://PH-DT5HR1S:9090/UserManagementService/EmployeeManagementService</con:endpoint><con:endpoint>http://128.129.248.25:9090/UserManagementService/EmployeeManagementService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getEmployeeAccount" bindingOperationName="getEmployeeAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://PH-DT5HR1S:9090/UserManagementService/EmployeeManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getEmployeeAccount>
+         <!--Optional:-->
+         <arg0>
+            <key>EMAIL</key>
+            <value>erwin.odchigue@logica.com</value>
+         </arg0>
+      </ws:getEmployeeAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>user</con:username><con:password>password</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/EmployeeManagementServiceEndpoint/getEmployeeAccountRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="saveEmployeeAccount" bindingOperationName="saveEmployeeAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/EmployeeManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:saveEmployeeAccount>
+         <!--Optional:-->
+         <arg0>
+            <acctType>?</acctType>
+            <countryId>?</countryId>
+            <email>?</email>
+            <firstName>?</firstName>
+            <language>?</language>
+            <lastName>?</lastName>
+            <phoneNumber>?</phoneNumber>
+            <!--Optional:-->
+            <sex>?</sex>
+            <smsNumber>?</smsNumber>
+            <!--Optional:-->
+            <perId>?</perId>
+            <!--Optional:-->
+            <socialSecNo>?</socialSecNo>
+            <!--Optional:-->
+            <commissionPct>?</commissionPct>
+            <!--Optional:-->
+            <departmentId>?</departmentId>
+            <!--Optional:-->
+            <hireDate>?</hireDate>
+            <jobId>?</jobId>
+            <managerId>?</managerId>
+            <!--Optional:-->
+            <salary>?</salary>
+            <empTypeId>?</empTypeId>
+            <cmptncyId>?</cmptncyId>
+            <cmptncyGrpId>?</cmptncyGrpId>
+            <careerLevelId>?</careerLevelId>
+         </arg0>
+      </ws:saveEmployeeAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/EmployeeManagementServiceEndpoint/saveEmployeeAccountRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateEmployeeAccount" bindingOperationName="updateEmployeeAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/EmployeeManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateEmployeeAccount>
+         <!--Optional:-->
+         <arg0>
+            <updateAccountId>?</updateAccountId>
+            <email>?</email>
+            <!--Optional:-->
+            <number>?</number>
+            <hireDate>?</hireDate>
+            <jobId>?</jobId>
+            <!--Optional:-->
+            <salary>?</salary>
+            <!--Optional:-->
+            <commissionPct>?</commissionPct>
+            <!--Optional:-->
+            <managerId>?</managerId>
+            <!--Optional:-->
+            <departmentId>?</departmentId>
+            <careerLevelId>?</careerLevelId>
+         </arg0>
+      </ws:updateEmployeeAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/EmployeeManagementServiceEndpoint/updateEmployeeAccountRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAllCareerLevels" bindingOperationName="getAllCareerLevels" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="username" value="asdf" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/EmployeeManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAllCareerLevels>
+         <!--Optional:-->
+         <arg0/>
+      </ws:getAllCareerLevels>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>user</con:username><con:password>password</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/EmployeeManagementServiceEndpoint/getAllCareerLevelsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAllCompetencyManager" bindingOperationName="getAllCompetencyManager" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/EmployeeManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAllCompetencyManager>
+         <!--Optional:-->
+         <arg0/>
+      </ws:getAllCompetencyManager>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>user</con:username><con:password>password</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/EmployeeManagementServiceEndpoint/getAllCompetencyManagerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAllDepartmentManager" bindingOperationName="getAllDepartmentManager" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/EmployeeManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAllDepartmentManager>
+         <!--Optional:-->
+         <arg0/>
+      </ws:getAllDepartmentManager>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/EmployeeManagementServiceEndpoint/getAllDepartmentManagerRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAllManagers" bindingOperationName="getAllManagers" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/EmployeeManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAllManagers>
+         <!--Optional:-->
+         <arg0/>
+      </ws:getAllManagers>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/EmployeeManagementServiceEndpoint/getAllManagersRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAllStaffManagers" bindingOperationName="getAllStaffManagers" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://128.129.248.25:9090/UserManagementService/EmployeeManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAllStaffManagers>
+         <!--Optional:-->
+         <arg0/>
+      </ws:getAllStaffManagers>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/EmployeeManagementServiceEndpoint/getAllStaffManagersRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="approveEmployee" bindingOperationName="approveEmployee" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://PH-DT5HR1S:9090/UserManagementService/EmployeeManagementService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.model.usermanagement.app.pms.logica.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:approveEmployee>
+         <!--Optional:-->
+         <arg0>
+            <requestId>?</requestId>
+            <employeeId>?</employeeId>
+         </arg0>
+      </ws:approveEmployee>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.model.usermanagement.app.pms.logica.com/EmployeeManagementServiceEndpoint/approveEmployeeRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

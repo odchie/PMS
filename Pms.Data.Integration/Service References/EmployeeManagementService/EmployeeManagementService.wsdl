@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.model.usermanagement.app.pms.logica.com/" name="EmployeeManagementService" targetNamespace="http://ws.model.usermanagement.app.pms.logica.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema targetNamespace="http://ws.model.usermanagement.app.pms.logica.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="approveEmployee" type="tns:approveEmployee" />
+      <xs:element name="approveEmployeeResponse" type="tns:approveEmployeeResponse" />
+      <xs:element name="getAllCareerLevels" type="tns:getAllCareerLevels" />
+      <xs:element name="getAllCareerLevelsResponse" type="tns:getAllCareerLevelsResponse" />
+      <xs:element name="getAllCompetencyManager" type="tns:getAllCompetencyManager" />
+      <xs:element name="getAllCompetencyManagerResponse" type="tns:getAllCompetencyManagerResponse" />
+      <xs:element name="getAllDepartmentManager" type="tns:getAllDepartmentManager" />
+      <xs:element name="getAllDepartmentManagerResponse" type="tns:getAllDepartmentManagerResponse" />
+      <xs:element name="getAllManagers" type="tns:getAllManagers" />
+      <xs:element name="getAllManagersResponse" type="tns:getAllManagersResponse" />
+      <xs:element name="getAllStaffManagers" type="tns:getAllStaffManagers" />
+      <xs:element name="getAllStaffManagersResponse" type="tns:getAllStaffManagersResponse" />
+      <xs:element name="getEmployeeAccount" type="tns:getEmployeeAccount" />
+      <xs:element name="getEmployeeAccountResponse" type="tns:getEmployeeAccountResponse" />
+      <xs:element name="saveEmployeeAccount" type="tns:saveEmployeeAccount" />
+      <xs:element name="saveEmployeeAccountResponse" type="tns:saveEmployeeAccountResponse" />
+      <xs:element name="updateEmployeeAccount" type="tns:updateEmployeeAccount" />
+      <xs:element name="updateEmployeeAccountResponse" type="tns:updateEmployeeAccountResponse" />
+      <xs:complexType name="getAllManagers">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllManagersRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllManagersRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:request">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="request">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getAllManagersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllManagersResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllManagersResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="list" type="tns:employeeInfoDTO" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:response">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="codeMessages" type="tns:codeMessage" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="response">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="employeeInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountInfoDTO" type="tns:accountInfoDTO" />
+          <xs:element minOccurs="0" name="careerLevel" type="tns:careerLevelDTO" />
+          <xs:element minOccurs="0" name="careerPathId" type="xs:int" />
+          <xs:element minOccurs="0" name="cmptncyGrpId" type="xs:long" />
+          <xs:element minOccurs="0" name="cmptncyId" type="xs:long" />
+          <xs:element minOccurs="0" name="commisionPct" type="xs:decimal" />
+          <xs:element minOccurs="0" name="corpLocNo" type="xs:string" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="departmentInfoDTO" type="tns:departmentInfoDTO" />
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element minOccurs="0" name="empStatusId" type="xs:int" />
+          <xs:element minOccurs="0" name="empTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="hireDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="job" type="tns:jobInfoDTO" />
+          <xs:element minOccurs="0" name="managerId" type="xs:long" />
+          <xs:element minOccurs="0" name="number" type="xs:string" />
+          <xs:element minOccurs="0" name="officeLocId" type="xs:int" />
+          <xs:element minOccurs="0" name="projMgrId" type="xs:long" />
+          <xs:element minOccurs="0" name="recordStatus" type="xs:int" />
+          <xs:element minOccurs="0" name="requestId" type="xs:string" />
+          <xs:element minOccurs="0" name="rohq" type="xs:string" />
+          <xs:element minOccurs="0" name="salary" type="xs:decimal" />
+          <xs:element minOccurs="0" name="seatNo" type="xs:string" />
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="accountInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activationToken" type="xs:string" />
+          <xs:element minOccurs="0" name="address" type="xs:string" />
+          <xs:element minOccurs="0" name="age" type="xs:int" />
+          <xs:element minOccurs="0" name="birthDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="civilStatus" type="xs:string" />
+          <xs:element minOccurs="0" name="countryId" type="xs:int" />
+          <xs:element minOccurs="0" name="externalEmail" type="xs:string" />
+          <xs:element minOccurs="0" name="firstName" type="xs:string" />
+          <xs:element minOccurs="0" name="homeNo" type="xs:string" />
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="lastName" type="xs:string" />
+          <xs:element minOccurs="0" name="middleName" type="xs:string" />
+          <xs:element minOccurs="0" name="passportExpiry" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="passportNo" type="xs:string" />
+          <xs:element minOccurs="0" name="primaryNo" type="xs:string" />
+          <xs:element minOccurs="0" name="recordStatus" type="xs:int" />
+          <xs:element minOccurs="0" name="resume" type="xs:string" />
+          <xs:element minOccurs="0" name="secondaryNo" type="xs:string" />
+          <xs:element minOccurs="0" name="sex" type="xs:string" />
+          <xs:element minOccurs="0" name="socialSecNo" type="xs:string" />
+          <xs:element minOccurs="0" name="startDateExp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+          <xs:element minOccurs="0" name="yrsItExp" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="careerLevelDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="careerLvl" type="xs:int" />
+          <xs:element minOccurs="0" name="careerLvlGrp" type="xs:long" />
+          <xs:element minOccurs="0" name="careerTitle" type="xs:string" />
+          <xs:element minOccurs="0" name="createBy" type="xs:string" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="indExp" type="xs:string" />
+          <xs:element minOccurs="0" name="roleExp" type="xs:string" />
+          <xs:element minOccurs="0" name="route" type="xs:string" />
+          <xs:element minOccurs="0" name="updateBy" type="xs:string" />
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="departmentInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createBy" type="xs:string" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="deptDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="deptId" type="xs:long" />
+          <xs:element minOccurs="0" name="deptName" type="xs:string" />
+          <xs:element minOccurs="0" name="locationId" type="xs:string" />
+          <xs:element minOccurs="0" name="managerId" type="xs:string" />
+          <xs:element name="status" type="xs:int" />
+          <xs:element minOccurs="0" name="updateBy" type="xs:string" />
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="jobInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="createBy" type="xs:string" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="maxSalary" type="xs:long" />
+          <xs:element minOccurs="0" name="minSalary" type="xs:long" />
+          <xs:element minOccurs="0" name="recordStausId" type="xs:long" />
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element minOccurs="0" name="title" type="xs:string" />
+          <xs:element minOccurs="0" name="updateBy" type="xs:string" />
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="codeMessage">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetencyManager">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllCompetencyManagerRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetencyManagerRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetencyManagerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllCompetencyManagerResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllCompetencyManagerResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="list" type="tns:employeeInfoDTO" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllDepartmentManager">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllDepartmentManagerRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllDepartmentManagerRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllDepartmentManagerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllDepartmentManagerResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllDepartmentManagerResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="list" type="tns:employeeInfoDTO" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllCareerLevels">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllCareerLevelsRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCareerLevelsRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllCareerLevelsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SearchAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="noOfTotalHits" type="xs:int" />
+              <xs:element maxOccurs="unbounded" name="careerLevels" type="tns:careerLevelDTO" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getEmployeeAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getEmployeeAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getEmployeeAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="key" type="xs:string" />
+              <xs:element name="value" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getEmployeeAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetEmployeeAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetEmployeeAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="id" type="xs:long" />
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="number" type="xs:string" />
+              <xs:element minOccurs="0" name="hireDate" type="xs:dateTime" />
+              <xs:element name="salary" type="xs:string" />
+              <xs:element name="commisionPct" type="xs:decimal" />
+              <xs:element name="managerId" type="xs:long" />
+              <xs:element name="department" type="tns:departmentInfoDTO" />
+              <xs:element name="person" type="tns:accountInfoDTO" />
+              <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+              <xs:element name="job" type="tns:jobInfoDTO" />
+              <xs:element name="careerlevel" type="tns:careerLevelDTO" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveEmployeeAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:saveEmployeeAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveEmployeeAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="acctType" type="xs:string" />
+              <xs:element minOccurs="0" name="activationToken" type="xs:string" />
+              <xs:element minOccurs="0" name="address" type="xs:string" />
+              <xs:element minOccurs="0" name="age" type="xs:string" />
+              <xs:element minOccurs="0" name="birthday" type="xs:dateTime" />
+              <xs:element name="careerLevelId" type="xs:string" />
+              <xs:element minOccurs="0" name="careerPathId" type="xs:int" />
+              <xs:element minOccurs="0" name="civilStatus" type="xs:string" />
+              <xs:element name="cmptncyGrpId" type="xs:string" />
+              <xs:element name="cmptncyId" type="xs:string" />
+              <xs:element minOccurs="0" name="commissionPct" type="xs:string" />
+              <xs:element minOccurs="0" name="corpLocNo" type="xs:string" />
+              <xs:element name="countryId" type="xs:string" />
+              <xs:element name="departmentId" type="xs:long" />
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="empTypeId" type="xs:string" />
+              <xs:element name="firstName" type="xs:string" />
+              <xs:element name="hireDate" type="xs:string" />
+              <xs:element minOccurs="0" name="homeNo" type="xs:string" />
+              <xs:element name="jobId" type="xs:string" />
+              <xs:element minOccurs="0" name="language" type="xs:string" />
+              <xs:element name="lastName" type="xs:string" />
+              <xs:element minOccurs="0" name="managerId" type="xs:string" />
+              <xs:element minOccurs="0" name="middleName" type="xs:string" />
+              <xs:element minOccurs="0" name="officeLocId" type="xs:int" />
+              <xs:element minOccurs="0" name="passportExpiry" type="xs:string" />
+              <xs:element minOccurs="0" name="passportNo" type="xs:string" />
+              <xs:element minOccurs="0" name="perId" type="xs:string" />
+              <xs:element minOccurs="0" name="phoneNumber" type="xs:string" />
+              <xs:element minOccurs="0" name="primaryNo" type="xs:string" />
+              <xs:element minOccurs="0" name="projMgrId" type="xs:long" />
+              <xs:element minOccurs="0" name="requestId" type="xs:string" />
+              <xs:element minOccurs="0" name="resumeFileName" type="xs:string" />
+              <xs:element minOccurs="0" name="rohq" type="xs:string" />
+              <xs:element minOccurs="0" name="salary" type="xs:string" />
+              <xs:element minOccurs="0" name="seatNo" type="xs:string" />
+              <xs:element minOccurs="0" name="secondaryNo" type="xs:string" />
+              <xs:element minOccurs="0" name="sex" type="xs:string" />
+              <xs:element minOccurs="0" name="smsNumber" type="xs:string" />
+              <xs:element minOccurs="0" name="socialSecNo" type="xs:string" />
+              <xs:element minOccurs="0" name="socialSecNumber" type="xs:string" />
+              <xs:element minOccurs="0" name="startDateExp" type="xs:string" />
+              <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+              <xs:element minOccurs="0" name="yrsItExp" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveEmployeeAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SaveAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SaveAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateEmployeeAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:updateEmployeeAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateEmployeeAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:saveEmployeeAccountRequest">
+            <xs:sequence>
+              <xs:element name="employeeId" type="xs:string" />
+              <xs:element name="empStatusId" type="xs:int" />
+              <xs:element name="recordStatus" type="xs:string" />
+              <xs:element name="updateReason" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateEmployeeAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:UpdateAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllStaffManagers">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllStaffManagersRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllStaffManagersRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllStaffManagersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllStaffManagersResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllStaffManagersResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="list" type="tns:employeeInfoDTO" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="approveEmployee">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:approveEmployeeRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="approveEmployeeRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="requestId" type="xs:string" />
+              <xs:element name="employeeId" type="xs:long" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="approveEmployeeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:ApproveEmployeeResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ApproveEmployeeResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="EmployeeManagementServiceEndpoint_approveEmployee">
+    <part name="parameters" element="tns:approveEmployee" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllManagers">
+    <part name="parameters" element="tns:getAllManagers" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllDepartmentManagerResponse">
+    <part name="parameters" element="tns:getAllDepartmentManagerResponse" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllDepartmentManager">
+    <part name="parameters" element="tns:getAllDepartmentManager" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllStaffManagers">
+    <part name="parameters" element="tns:getAllStaffManagers" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_approveEmployeeResponse">
+    <part name="parameters" element="tns:approveEmployeeResponse" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_updateEmployeeAccountResponse">
+    <part name="parameters" element="tns:updateEmployeeAccountResponse" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getEmployeeAccountResponse">
+    <part name="parameters" element="tns:getEmployeeAccountResponse" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getEmployeeAccount">
+    <part name="parameters" element="tns:getEmployeeAccount" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_saveEmployeeAccount">
+    <part name="parameters" element="tns:saveEmployeeAccount" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllCareerLevels">
+    <part name="parameters" element="tns:getAllCareerLevels" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_saveEmployeeAccountResponse">
+    <part name="parameters" element="tns:saveEmployeeAccountResponse" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllStaffManagersResponse">
+    <part name="parameters" element="tns:getAllStaffManagersResponse" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllCompetencyManager">
+    <part name="parameters" element="tns:getAllCompetencyManager" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllCompetencyManagerResponse">
+    <part name="parameters" element="tns:getAllCompetencyManagerResponse" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllManagersResponse">
+    <part name="parameters" element="tns:getAllManagersResponse" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_updateEmployeeAccount">
+    <part name="parameters" element="tns:updateEmployeeAccount" />
+  </message>
+  <message name="EmployeeManagementServiceEndpoint_getAllCareerLevelsResponse">
+    <part name="parameters" element="tns:getAllCareerLevelsResponse" />
+  </message>
+  <portType name="EmployeeManagementServiceEndpoint">
+    <operation name="approveEmployee" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_approveEmployee" />
+      <output message="tns:EmployeeManagementServiceEndpoint_approveEmployeeResponse" />
+    </operation>
+    <operation name="getAllCareerLevels" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getAllCareerLevels" />
+      <output message="tns:EmployeeManagementServiceEndpoint_getAllCareerLevelsResponse" />
+    </operation>
+    <operation name="getAllCompetencyManager" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getAllCompetencyManager" />
+      <output message="tns:EmployeeManagementServiceEndpoint_getAllCompetencyManagerResponse" />
+    </operation>
+    <operation name="getAllDepartmentManager" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getAllDepartmentManager" />
+      <output message="tns:EmployeeManagementServiceEndpoint_getAllDepartmentManagerResponse" />
+    </operation>
+    <operation name="getAllManagers" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getAllManagers" />
+      <output message="tns:EmployeeManagementServiceEndpoint_getAllManagersResponse" />
+    </operation>
+    <operation name="getAllStaffManagers" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getAllStaffManagers" />
+      <output message="tns:EmployeeManagementServiceEndpoint_getAllStaffManagersResponse" />
+    </operation>
+    <operation name="getEmployeeAccount" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_getEmployeeAccount" />
+      <output message="tns:EmployeeManagementServiceEndpoint_getEmployeeAccountResponse" />
+    </operation>
+    <operation name="saveEmployeeAccount" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_saveEmployeeAccount" />
+      <output message="tns:EmployeeManagementServiceEndpoint_saveEmployeeAccountResponse" />
+    </operation>
+    <operation name="updateEmployeeAccount" parameterOrder="parameters">
+      <input message="tns:EmployeeManagementServiceEndpoint_updateEmployeeAccount" />
+      <output message="tns:EmployeeManagementServiceEndpoint_updateEmployeeAccountResponse" />
+    </operation>
+  </portType>
+  <binding name="EmployeeManagementServiceEndpointBinding" type="tns:EmployeeManagementServiceEndpoint">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="approveEmployee">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllCareerLevels">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllCompetencyManager">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllDepartmentManager">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllManagers">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllStaffManagers">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getEmployeeAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="saveEmployeeAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateEmployeeAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EmployeeManagementService">
+    <port name="EmployeeManagementServiceEndpointPort" binding="tns:EmployeeManagementServiceEndpointBinding">
+      <soap:address location="http://128.129.248.25:9090/UserManagementService/EmployeeManagementService" />
+    </port>
+  </service>
+</definitions>

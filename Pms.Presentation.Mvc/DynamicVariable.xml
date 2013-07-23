@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pms>
+  <ServiceResponses>
+    <ServiceResponse Id="-2" Name="Invalid Key" />
+    <ServiceResponse Id="0" Name="Success" />
+    <ServiceResponse Id="1" Name="Internal server error. " />
+    <ServiceResponse Id="2" Name="Function not supported." />
+    <ServiceResponse Id="3" Name="Error while sending mail." />
+    <ServiceResponse Id="4" Name="Template mail does not exist. " />
+    <ServiceResponse Id="5" Name="Response not set or initialized." />
+    <ServiceResponse Id="6" Name="Activation token is invalid." />
+    <ServiceResponse Id="7" Name="Validation error." />
+    <ServiceResponse Id="8" Name="Communication error." />
+    <ServiceResponse Id="100" Name="Account is active." />
+    <ServiceResponse Id="101" Name="Account is blocked. " />
+    <ServiceResponse Id="102" Name="Account is deleted." />
+    <ServiceResponse Id="103" Name="Account is locked." />
+    <ServiceResponse Id="104" Name="Account does not exist." />
+    <ServiceResponse Id="105" Name="Several accounts were found where the expected result should only be one." />
+    <ServiceResponse Id="107" Name="The account state is invalid." />
+    <ServiceResponse Id="106" Name="The e-mail address is not confirmed. Please verify the provided e-mail address first." />
+    <ServiceResponse Id="100" Name="Department is not unique. " />
+    <ServiceResponse Id="101" Name="No record found for Deparment ID" />
+    <ServiceResponse Id="101" Name="Department does not Exist." />
+    <ServiceResponse Id="200" Name="E-mail address format is invalid. " />
+    <ServiceResponse Id="201" Name="E-mail address is too long. " />
+    <ServiceResponse Id="202" Name="E-mail address is too short. " />
+    <ServiceResponse Id="203" Name="No e-mail address is given. " />
+    <ServiceResponse Id="204" Name="E-mail address is already in use. " />
+    <ServiceResponse Id="300" Name="First name is invalid." />
+    <ServiceResponse Id="301" Name="First name is too long." />
+    <ServiceResponse Id="302" Name="No First name is given. " />
+    <ServiceResponse Id="102" Name="Experienced an interservice call thrown from another module. " />
+    <ServiceResponse Id="104" Name="Job does not exist. " />
+    <ServiceResponse Id="303" Name="Last name is invalid. " />
+    <ServiceResponse Id="304" Name="Last name is too long. " />
+    <ServiceResponse Id="305" Name="No Last name is given. " />
+    <ServiceResponse Id="400" Name="Password does not have a valid format." />
+    <ServiceResponse Id="401" Name="Password is too short." />
+    <ServiceResponse Id="402" Name="Password is not given. " />
+    <ServiceResponse Id="306" Name="Phone number format is invalid." />
+    <ServiceResponse Id="307" Name="Mobile mumber format is invalid." />
+    <ServiceResponse Id="308" Name="SMS number is too long." />
+    <ServiceResponse Id="309" Name="Street address is too long." />
+  </ServiceResponses>
+</Pms>

@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.model.usermanagement.app.pms.logica.com/" name="UserManagementService" targetNamespace="http://ws.model.usermanagement.app.pms.logica.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema targetNamespace="http://ws.model.usermanagement.app.pms.logica.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="activateAccount" type="tns:activateAccount" />
+      <xs:element name="activateAccountResponse" type="tns:activateAccountResponse" />
+      <xs:element name="activateByEmail" type="tns:activateByEmail" />
+      <xs:element name="activateByEmailResponse" type="tns:activateByEmailResponse" />
+      <xs:element name="blockAccount" type="tns:blockAccount" />
+      <xs:element name="blockAccountResponse" type="tns:blockAccountResponse" />
+      <xs:element name="checkPassword" type="tns:checkPassword" />
+      <xs:element name="checkPasswordResponse" type="tns:checkPasswordResponse" />
+      <xs:element name="deleteAccount" type="tns:deleteAccount" />
+      <xs:element name="deleteAccountResponse" type="tns:deleteAccountResponse" />
+      <xs:element name="getAccount" type="tns:getAccount" />
+      <xs:element name="getAccountResponse" type="tns:getAccountResponse" />
+      <xs:element name="getAccountState" type="tns:getAccountState" />
+      <xs:element name="getAccountStateResponse" type="tns:getAccountStateResponse" />
+      <xs:element name="lockAccount" type="tns:lockAccount" />
+      <xs:element name="lockAccountResponse" type="tns:lockAccountResponse" />
+      <xs:element name="saveAccount" type="tns:saveAccount" />
+      <xs:element name="saveAccountResponse" type="tns:saveAccountResponse" />
+      <xs:element name="searchAccount" type="tns:searchAccount" />
+      <xs:element name="searchAccountResponse" type="tns:searchAccountResponse" />
+      <xs:element name="updateAccount" type="tns:updateAccount" />
+      <xs:element name="updateAccountResponse" type="tns:updateAccountResponse" />
+      <xs:complexType name="getAccountState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAccountStateRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccountStateRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="getAccountId" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:request">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="request">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getAccountStateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAccountStateResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountStateResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="state" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:response">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="codeMessages" type="tns:codeMessage" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="response">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="codeMessage">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateByEmail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:activateByEmailRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateByEmailRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="activateByEmailId" type="xs:string" />
+              <xs:element name="activationToken" type="xs:string" />
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="userName" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="activateByEmailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:ActivateByEmailResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ActivateByEmailResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:updateAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:saveAccountRequest">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="activationToken" type="xs:string" />
+              <xs:element minOccurs="0" name="address" type="xs:string" />
+              <xs:element minOccurs="0" name="age" type="xs:string" />
+              <xs:element minOccurs="0" name="birthday" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="civilStatus" type="xs:string" />
+              <xs:element name="countryId" type="xs:string" />
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="firstName" type="xs:string" />
+              <xs:element minOccurs="0" name="homeNo" type="xs:string" />
+              <xs:element name="lastName" type="xs:string" />
+              <xs:element minOccurs="0" name="middleName" type="xs:string" />
+              <xs:element minOccurs="0" name="passportExpiry" type="xs:string" />
+              <xs:element minOccurs="0" name="passportNo" type="xs:string" />
+              <xs:element minOccurs="0" name="primaryNo" type="xs:string" />
+              <xs:element minOccurs="0" name="reason" type="xs:string" />
+              <xs:element name="recordStatus" type="xs:string" />
+              <xs:element minOccurs="0" name="secondaryNo" type="xs:string" />
+              <xs:element minOccurs="0" name="sex" type="xs:string" />
+              <xs:element minOccurs="0" name="socialSecNumber" type="xs:string" />
+              <xs:element minOccurs="0" name="startDateExp" type="xs:string" />
+              <xs:element name="type" type="xs:string" />
+              <xs:element minOccurs="0" name="yrsItExp" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:UpdateAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="key" type="xs:string" />
+              <xs:element name="value" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="activationToken" type="xs:string" />
+              <xs:element minOccurs="0" name="age" type="xs:string" />
+              <xs:element minOccurs="0" name="birthday" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="country" type="xs:string" />
+              <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="email" type="xs:string" />
+              <xs:element minOccurs="0" name="firstName" type="xs:string" />
+              <xs:element minOccurs="0" name="id" type="xs:string" />
+              <xs:element minOccurs="0" name="lastName" type="xs:string" />
+              <xs:element minOccurs="0" name="middleName" type="xs:string" />
+              <xs:element minOccurs="0" name="password" type="xs:string" />
+              <xs:element minOccurs="0" name="reason" type="xs:string" />
+              <xs:element minOccurs="0" name="sex" type="xs:string" />
+              <xs:element minOccurs="0" name="socialSecNumber" type="xs:string" />
+              <xs:element minOccurs="0" name="status" type="xs:string" />
+              <xs:element minOccurs="0" name="statusChangeBy" type="xs:string" />
+              <xs:element minOccurs="0" name="statusChangeReason" type="xs:string" />
+              <xs:element minOccurs="0" name="statusChangeTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="type" type="xs:string" />
+              <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="userName" type="xs:string" />
+              <xs:element minOccurs="0" name="passportNo" type="xs:string" />
+              <xs:element minOccurs="0" name="passportExpiry" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="saveAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:saveAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SaveAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SaveAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="id" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="searchAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:searchAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="accountId" type="xs:long" />
+              <xs:element minOccurs="0" name="email" type="xs:string" />
+              <xs:element minOccurs="0" name="firstName" type="xs:string" />
+              <xs:element minOccurs="0" name="lastName" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="searchAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SearchAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="noOfTotalHits" type="xs:int" />
+              <xs:element maxOccurs="unbounded" name="userAccountList" type="tns:accountInfoDTO" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="accountInfoDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activationToken" type="xs:string" />
+          <xs:element minOccurs="0" name="address" type="xs:string" />
+          <xs:element minOccurs="0" name="age" type="xs:int" />
+          <xs:element minOccurs="0" name="birthDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="civilStatus" type="xs:string" />
+          <xs:element minOccurs="0" name="countryId" type="xs:int" />
+          <xs:element minOccurs="0" name="externalEmail" type="xs:string" />
+          <xs:element minOccurs="0" name="firstName" type="xs:string" />
+          <xs:element minOccurs="0" name="homeNo" type="xs:string" />
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="lastName" type="xs:string" />
+          <xs:element minOccurs="0" name="middleName" type="xs:string" />
+          <xs:element minOccurs="0" name="passportExpiry" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="passportNo" type="xs:string" />
+          <xs:element minOccurs="0" name="primaryNo" type="xs:string" />
+          <xs:element minOccurs="0" name="recordStatus" type="xs:int" />
+          <xs:element minOccurs="0" name="resume" type="xs:string" />
+          <xs:element minOccurs="0" name="secondaryNo" type="xs:string" />
+          <xs:element minOccurs="0" name="sex" type="xs:string" />
+          <xs:element minOccurs="0" name="socialSecNo" type="xs:string" />
+          <xs:element minOccurs="0" name="startDateExp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+          <xs:element minOccurs="0" name="yrsItExp" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:activateAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="activateAccountId" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="activateAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:ActivateAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ActivateAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="result" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="blockAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:blockAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="blockAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="blockAccountId" type="xs:string" />
+              <xs:element name="statusChangeReason" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="blockAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:BlockAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BlockAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="isBlocked" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="checkPassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:checkPasswordRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkPasswordRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="password" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="checkPasswordResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:CheckPasswordResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CheckPasswordResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="message" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="deleteAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:deleteAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="deleteAccountId" type="xs:string" />
+              <xs:element minOccurs="0" name="statusChangeReason" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="deleteAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:DeleteAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="personId" type="xs:string" />
+              <xs:element name="isDeleted" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="lockAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:lockAccountRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="lockAccountRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="lockAccountId" type="xs:string" />
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="status" type="xs:string" />
+              <xs:element name="statusChangeReason" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="lockAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:LockAccountResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LockAccountResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element name="result" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="UserManagementServiceEndpoint_saveAccount">
+    <part name="parameters" element="tns:saveAccount" />
+  </message>
+  <message name="UserManagementServiceEndpoint_getAccountStateResponse">
+    <part name="parameters" element="tns:getAccountStateResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_getAccount">
+    <part name="parameters" element="tns:getAccount" />
+  </message>
+  <message name="UserManagementServiceEndpoint_lockAccountResponse">
+    <part name="parameters" element="tns:lockAccountResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_getAccountState">
+    <part name="parameters" element="tns:getAccountState" />
+  </message>
+  <message name="UserManagementServiceEndpoint_searchAccountResponse">
+    <part name="parameters" element="tns:searchAccountResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_checkPassword">
+    <part name="parameters" element="tns:checkPassword" />
+  </message>
+  <message name="UserManagementServiceEndpoint_updateAccount">
+    <part name="parameters" element="tns:updateAccount" />
+  </message>
+  <message name="UserManagementServiceEndpoint_deleteAccountResponse">
+    <part name="parameters" element="tns:deleteAccountResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_updateAccountResponse">
+    <part name="parameters" element="tns:updateAccountResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_searchAccount">
+    <part name="parameters" element="tns:searchAccount" />
+  </message>
+  <message name="UserManagementServiceEndpoint_checkPasswordResponse">
+    <part name="parameters" element="tns:checkPasswordResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_saveAccountResponse">
+    <part name="parameters" element="tns:saveAccountResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_activateAccount">
+    <part name="parameters" element="tns:activateAccount" />
+  </message>
+  <message name="UserManagementServiceEndpoint_activateByEmailResponse">
+    <part name="parameters" element="tns:activateByEmailResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_getAccountResponse">
+    <part name="parameters" element="tns:getAccountResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_blockAccountResponse">
+    <part name="parameters" element="tns:blockAccountResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_deleteAccount">
+    <part name="parameters" element="tns:deleteAccount" />
+  </message>
+  <message name="UserManagementServiceEndpoint_activateAccountResponse">
+    <part name="parameters" element="tns:activateAccountResponse" />
+  </message>
+  <message name="UserManagementServiceEndpoint_blockAccount">
+    <part name="parameters" element="tns:blockAccount" />
+  </message>
+  <message name="UserManagementServiceEndpoint_lockAccount">
+    <part name="parameters" element="tns:lockAccount" />
+  </message>
+  <message name="UserManagementServiceEndpoint_activateByEmail">
+    <part name="parameters" element="tns:activateByEmail" />
+  </message>
+  <portType name="UserManagementServiceEndpoint">
+    <operation name="activateAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_activateAccount" />
+      <output message="tns:UserManagementServiceEndpoint_activateAccountResponse" />
+    </operation>
+    <operation name="activateByEmail" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_activateByEmail" />
+      <output message="tns:UserManagementServiceEndpoint_activateByEmailResponse" />
+    </operation>
+    <operation name="blockAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_blockAccount" />
+      <output message="tns:UserManagementServiceEndpoint_blockAccountResponse" />
+    </operation>
+    <operation name="checkPassword" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_checkPassword" />
+      <output message="tns:UserManagementServiceEndpoint_checkPasswordResponse" />
+    </operation>
+    <operation name="deleteAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_deleteAccount" />
+      <output message="tns:UserManagementServiceEndpoint_deleteAccountResponse" />
+    </operation>
+    <operation name="getAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_getAccount" />
+      <output message="tns:UserManagementServiceEndpoint_getAccountResponse" />
+    </operation>
+    <operation name="getAccountState" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_getAccountState" />
+      <output message="tns:UserManagementServiceEndpoint_getAccountStateResponse" />
+    </operation>
+    <operation name="lockAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_lockAccount" />
+      <output message="tns:UserManagementServiceEndpoint_lockAccountResponse" />
+    </operation>
+    <operation name="saveAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_saveAccount" />
+      <output message="tns:UserManagementServiceEndpoint_saveAccountResponse" />
+    </operation>
+    <operation name="searchAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_searchAccount" />
+      <output message="tns:UserManagementServiceEndpoint_searchAccountResponse" />
+    </operation>
+    <operation name="updateAccount" parameterOrder="parameters">
+      <input message="tns:UserManagementServiceEndpoint_updateAccount" />
+      <output message="tns:UserManagementServiceEndpoint_updateAccountResponse" />
+    </operation>
+  </portType>
+  <binding name="UserManagementServiceEndpointBinding" type="tns:UserManagementServiceEndpoint">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="activateAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="activateByEmail">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="blockAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="checkPassword">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="lockAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="saveAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="searchAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="UserManagementService">
+    <port name="UserManagementServiceEndpointPort" binding="tns:UserManagementServiceEndpointBinding">
+      <soap:address location="http://128.129.248.25:9090/UserManagementService/UserManagementService" />
+    </port>
+  </service>
+</definitions>

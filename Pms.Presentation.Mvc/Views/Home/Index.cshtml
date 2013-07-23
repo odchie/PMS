@@ -1,0 +1,63 @@
+﻿@model Pms.Entity.Interface.IPerson
+@{
+    ViewBag.Title = "Performance Management System";
+}
+
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h2>@ViewBag.Title.</h2>                
+        </hgroup>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing eliv. 
+            Praesent pellentesque ante a tortor pretium in bibendum metus ullamcorper.
+            <b>Suspendisse volutpat metus a elit elementum ut tempus nulla vestibulum. </b>
+            Vivamus bibendum, nibh vitae lobortis molestie, lacus augue consequat risus, eget fringilla augue leo sit amet erat.
+            Ut posuere consectetur nulla quis vestibulum. Quisque varius, lacus nec eleifend pharetra, risus ligula sollicitudin ante, eu vestibulum ligula eros vel urna. 
+            Aliquam eu porta nulla. Cras et lorem vitae lorem suscipit sollicitudin. Ut sed arcu sit amet quam ultricies vestibulum sit amet id enim. 
+            Curabitur rutrum interdum tortor non auctor. Integer vel lectus non nunc pretium porttitor. Integer at risus id lectus mollis euismod.
+        </p>
+    </div>
+</section>
+<!-- Check for First Time Login -->
+@if (Pms.Presentation.Mvc.Helper.PresentationUtility.IsFirstTime())
+{
+<div class="well">
+    Hello, @User.Identity.Name!, Welcome to the PMs.  To access the system please click @Html.ActionLink("here", "Edit", "UserManagement") to update your profile.
+</div>
+}
+else
+{
+
+<p style="margin-top: 20px;">    
+    <b>User Management</b> dolor sit amet, consectetur adipiscing eliv. 
+    Praesent pellentesque ante a tortor pretium in bibendum metus ullamcorper.
+    Suspendisse volutpat metus a elit elementum ut tempus nulla vestibulum.
+</p>
+<div>
+    <a class="profile-link" href="@System.Threading.Thread.CurrentThread.CurrentCulture.Name/UserManagement/Search">User Management</a>
+</div>    
+
+
+
+<p style="margin-top: 20px;">    
+    <b>Skills Management</b> dolor sit amet, consectetur adipiscing eliv. 
+    Praesent pellentesque ante a tortor pretium in bibendum metus ullamcorper.
+    Suspendisse volutpat metus a elit elementum ut tempus nulla vestibulum.
+</p>
+<div>
+    <a class="profile-link" href="@System.Threading.Thread.CurrentThread.CurrentCulture.Name/SkillsManagement/Detail">Skills Management</a>
+</div>
+
+
+
+<p style="margin-top: 20px;">    
+    <b>Project Management</b> dolor sit amet, consectetur adipiscing eliv. 
+    Praesent pellentesque ante a tortor pretium in bibendum metus ullamcorper.
+    Suspendisse volutpat metus a elit elementum ut tempus nulla vestibulum.
+</p>
+<div>    
+    <a class="profile-link" href="@System.Threading.Thread.CurrentThread.CurrentCulture.Name/ProjectManagement/Detail">Project Profile</a>
+</div>
+}
+

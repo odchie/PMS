@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.model.skillmanagement.app.pms.logica.com/" name="SkillManagementService" targetNamespace="http://ws.model.skillmanagement.app.pms.logica.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema targetNamespace="http://ws.model.skillmanagement.app.pms.logica.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getAllCompetencies" type="tns:getAllCompetencies" />
+      <xs:element name="getAllCompetenciesResponse" type="tns:getAllCompetenciesResponse" />
+      <xs:element name="getAllCompetencyGroups" type="tns:getAllCompetencyGroups" />
+      <xs:element name="getAllCompetencyGroupsResponse" type="tns:getAllCompetencyGroupsResponse" />
+      <xs:element name="getAllTechnologyKnowledgeDetails" type="tns:getAllTechnologyKnowledgeDetails" />
+      <xs:element name="getAllTechnologyKnowledgeDetailsResponse" type="tns:getAllTechnologyKnowledgeDetailsResponse" />
+      <xs:element name="getAllTechnologyKnowledgeGroups" type="tns:getAllTechnologyKnowledgeGroups" />
+      <xs:element name="getAllTechnologyKnowledgeGroupsResponse" type="tns:getAllTechnologyKnowledgeGroupsResponse" />
+      <xs:element name="getScoreCard" type="tns:getScoreCard" />
+      <xs:element name="getScoreCardResponse" type="tns:getScoreCardResponse" />
+      <xs:element name="saveScoreCard" type="tns:saveScoreCard" />
+      <xs:element name="saveScoreCardResponse" type="tns:saveScoreCardResponse" />
+      <xs:complexType name="saveScoreCard">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:saveScoreCardRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveScoreCardRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="scoreCards" type="tns:scoreCardDto" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:request">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="request">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="scoreCardDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="competencyGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="competencyId" type="xs:long" />
+          <xs:element minOccurs="0" name="employeeId" type="xs:long" />
+          <xs:element minOccurs="0" name="personId" type="xs:long" />
+          <xs:element minOccurs="0" name="recordStatusId" type="xs:long" />
+          <xs:element minOccurs="0" name="scoreLevel" type="xs:int" />
+          <xs:element minOccurs="0" name="technologyKnowledgeGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="technologyKnowlegeDetailId" type="xs:long" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+          <xs:element minOccurs="0" name="year" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveScoreCardResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:SaveScoreCardResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SaveScoreCardResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="message" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:response">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="codeMessages" type="tns:codeMessage" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="response">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="codeMessage">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetencies">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllCompetenciesRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetenciesRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetenciesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllCompetenciesResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllCompetenciesResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="comptencies" type="tns:competencyDto" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="competencyDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="comeptencyDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="comeptencyId" type="xs:long" />
+          <xs:element minOccurs="0" name="comeptencyName" type="xs:string" />
+          <xs:element minOccurs="0" name="competencyManagerId" type="xs:long" />
+          <xs:element minOccurs="0" name="createBy" type="xs:string" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="recordStatusId" type="xs:long" />
+          <xs:element minOccurs="0" name="updateBy" type="xs:string" />
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getScoreCard">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getScoreCardRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getScoreCardRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence>
+              <xs:element name="employeeId" type="xs:long" />
+              <xs:element name="competencyId" type="xs:long" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getScoreCardResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetScoreCardResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetScoreCardResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="scoreCards" type="tns:scoreCardViewDto" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="scoreCardViewDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="competencyGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="competencyId" type="xs:long" />
+          <xs:element minOccurs="0" name="competencyName" type="xs:string" />
+          <xs:element minOccurs="0" name="employeeId" type="xs:long" />
+          <xs:element minOccurs="0" name="firstName" type="xs:string" />
+          <xs:element minOccurs="0" name="lastName" type="xs:string" />
+          <xs:element minOccurs="0" name="personId" type="xs:long" />
+          <xs:element minOccurs="0" name="scoreLevel" type="xs:int" />
+          <xs:element minOccurs="0" name="technologyKnowledgeDetailId" type="xs:long" />
+          <xs:element minOccurs="0" name="technologyKnowledgeDetailName" type="xs:string" />
+          <xs:element minOccurs="0" name="technologyKnowledgeGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="technologyKnowledgeGroupName" type="xs:string" />
+          <xs:element minOccurs="0" name="year" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetencyGroups">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllCompetencyGroupsRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetencyGroupsRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllCompetencyGroupsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllCompetencyGroupsResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllCompetencyGroupsResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="comptencyGroups" type="tns:competencyGroupDto" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="competencyGroupDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="competencyGroupDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="competencyGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="competencyGroupName" type="xs:string" />
+          <xs:element minOccurs="0" name="competencyId" type="xs:long" />
+          <xs:element minOccurs="0" name="createBy" type="xs:string" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updateBy" type="xs:string" />
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllTechnologyKnowledgeDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllTechnologyKnowledgeDetailsRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllTechnologyKnowledgeDetailsRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllTechnologyKnowledgeDetailsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllTechnologyKnowledgeDetailsResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllTechnologyKnowledgeDetailsResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="technologyKnowledgeDetails" type="tns:technologyKnowledgeDetailDto" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="technologyKnowledgeDetailDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createBy" type="xs:string" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="technologyKnowledgeDetailDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="technologyKnowledgeDetailId" type="xs:long" />
+          <xs:element minOccurs="0" name="technologyKnowledgeDetailName" type="xs:string" />
+          <xs:element minOccurs="0" name="technologyKnowledgeGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="updateBy" type="xs:string" />
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllTechnologyKnowledgeGroups">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:getAllTechnologyKnowledgeGroupsRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllTechnologyKnowledgeGroupsRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRequest">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getAllTechnologyKnowledgeGroupsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:GetAllTechnologyKnowledgeGroupsResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllTechnologyKnowledgeGroupsResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="technologyKnowledgeGroups" type="tns:technologyKnowledgeGroupDto" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="technologyKnowledgeGroupDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="competencyGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="competencyId" type="xs:long" />
+          <xs:element minOccurs="0" name="createBy" type="xs:string" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="tech" type="xs:string" />
+          <xs:element minOccurs="0" name="technologyKnowledgeGroupDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="technologyKnowledgeGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="technologyKnowledgeGroupName" type="xs:string" />
+          <xs:element minOccurs="0" name="updateBy" type="xs:string" />
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updateReason" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="SkillManagementServiceEndpoint_getAllCompetencies">
+    <part name="parameters" element="tns:getAllCompetencies" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_getAllTechnologyKnowledgeDetails">
+    <part name="parameters" element="tns:getAllTechnologyKnowledgeDetails" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_getAllTechnologyKnowledgeGroups">
+    <part name="parameters" element="tns:getAllTechnologyKnowledgeGroups" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_getAllCompetencyGroups">
+    <part name="parameters" element="tns:getAllCompetencyGroups" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_getAllCompetenciesResponse">
+    <part name="parameters" element="tns:getAllCompetenciesResponse" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_getScoreCard">
+    <part name="parameters" element="tns:getScoreCard" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_getScoreCardResponse">
+    <part name="parameters" element="tns:getScoreCardResponse" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_getAllTechnologyKnowledgeGroupsResponse">
+    <part name="parameters" element="tns:getAllTechnologyKnowledgeGroupsResponse" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_getAllTechnologyKnowledgeDetailsResponse">
+    <part name="parameters" element="tns:getAllTechnologyKnowledgeDetailsResponse" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_getAllCompetencyGroupsResponse">
+    <part name="parameters" element="tns:getAllCompetencyGroupsResponse" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_saveScoreCardResponse">
+    <part name="parameters" element="tns:saveScoreCardResponse" />
+  </message>
+  <message name="SkillManagementServiceEndpoint_saveScoreCard">
+    <part name="parameters" element="tns:saveScoreCard" />
+  </message>
+  <portType name="SkillManagementServiceEndpoint">
+    <operation name="getAllCompetencies" parameterOrder="parameters">
+      <input message="tns:SkillManagementServiceEndpoint_getAllCompetencies" />
+      <output message="tns:SkillManagementServiceEndpoint_getAllCompetenciesResponse" />
+    </operation>
+    <operation name="getAllCompetencyGroups" parameterOrder="parameters">
+      <input message="tns:SkillManagementServiceEndpoint_getAllCompetencyGroups" />
+      <output message="tns:SkillManagementServiceEndpoint_getAllCompetencyGroupsResponse" />
+    </operation>
+    <operation name="getAllTechnologyKnowledgeDetails" parameterOrder="parameters">
+      <input message="tns:SkillManagementServiceEndpoint_getAllTechnologyKnowledgeDetails" />
+      <output message="tns:SkillManagementServiceEndpoint_getAllTechnologyKnowledgeDetailsResponse" />
+    </operation>
+    <operation name="getAllTechnologyKnowledgeGroups" parameterOrder="parameters">
+      <input message="tns:SkillManagementServiceEndpoint_getAllTechnologyKnowledgeGroups" />
+      <output message="tns:SkillManagementServiceEndpoint_getAllTechnologyKnowledgeGroupsResponse" />
+    </operation>
+    <operation name="getScoreCard" parameterOrder="parameters">
+      <input message="tns:SkillManagementServiceEndpoint_getScoreCard" />
+      <output message="tns:SkillManagementServiceEndpoint_getScoreCardResponse" />
+    </operation>
+    <operation name="saveScoreCard" parameterOrder="parameters">
+      <input message="tns:SkillManagementServiceEndpoint_saveScoreCard" />
+      <output message="tns:SkillManagementServiceEndpoint_saveScoreCardResponse" />
+    </operation>
+  </portType>
+  <binding name="SkillManagementServiceEndpointBinding" type="tns:SkillManagementServiceEndpoint">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getAllCompetencies">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllCompetencyGroups">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllTechnologyKnowledgeDetails">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllTechnologyKnowledgeGroups">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getScoreCard">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="saveScoreCard">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SkillManagementService">
+    <port name="SkillManagementServiceEndpointPort" binding="tns:SkillManagementServiceEndpointBinding">
+      <soap:address location="http://128.129.248.25:9090/SkillManagementService/SkillManagementService" />
+    </port>
+  </service>
+</definitions>
